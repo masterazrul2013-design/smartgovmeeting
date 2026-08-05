@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abstrak Sistem - SmartGovMeeting PMTG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --color-primary: #1e3a8a;
+      --color-secondary: #3b82f6;
+      --bg-primary: #f1f5f9;
+      --bg-card: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --border-color: #cbd5e1;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', 'Arial', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      padding: 40px 10px;
+    }
+
+    /* Screen Action Bar */
+    .action-bar {
+      max-width: 210mm; /* A4 Width */
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      background: #1e293b;
+      color: white;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--color-secondary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-print:hover {
+      background-color: #2563eb;
+    }
+
+    /* Document Sheet styling (A4 Document Format) */
+    .paper-container {
+      background-color: var(--bg-card);
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 25mm 20mm;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius);
+    }
+
+    /* Header formatting */
+    .header-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .doc-logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .title-ms {
+      font-size: 14pt;
+      font-weight: 800;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .title-en {
+      font-size: 12pt;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      font-style: italic;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .author-info {
+      font-size: 10.5pt;
+      color: var(--text-primary);
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .author-name {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Abstract Block formatting */
+    .abstract-block {
+      margin-bottom: 35px;
+      text-align: justify;
+    }
+
+    .abstract-title {
+      font-size: 11pt;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .abstract-text {
+      font-size: 10pt;
+      text-indent: 10mm;
+      margin-bottom: 12px;
+      text-align: justify;
+      color: #1e293b;
+    }
+
+    .abstract-text.english-italic {
+      font-style: italic;
+      color: #475569;
+    }
+
+    .keywords {
+      font-size: 9.5pt;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    .keywords span {
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .footer-line {
+      margin-top: 50px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 10px;
+      font-size: 8.5pt;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Print styling overrides */
+    @media print {
+      body {
+        background-color: white !important;
+        padding: 0 !important;
+      }
+      .paper-container {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .abstract-text {
+        font-size: 10pt !important;
+        color: black !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Only Action Bar -->
+  <div class="action-bar no-print">
+    <span style="font-size: 14px; font-weight:600;"><i data-lucide="file-text" style="vertical-align: middle; width: 18px; margin-right: 6px;"></i> Abstrak Sistem SmartGovMeeting PMTG</span>
+    <button class="btn-print" onclick="window.print()">
+      <i data-lucide="printer" style="width: 16px; height: 16px;"></i> Cetak Abstrak / PDF
+    </button>
+  </div>
+
+  <!-- A4 Document Sheet -->
+  <div class="paper-container">
+
+    <!-- Header Section -->
+    <div class="header-section">
+      <img src="logo.jpg" class="doc-logo" alt="Politeknik METrO Tasek Gelugor">
+      <h1 class="title-ms">Sistem Pengurusan Mesyuarat Pintar Kerajaan (SmartGovMeeting PMTG): Rekayasa Tadbir Urus Digital Di Politeknik METrO Tasek Gelugor</h1>
+      <h2 class="title-en">Government Smart Meeting Management System (SmartGovMeeting PMTG): Re-Engineering Digital Governance At Politeknik METrO Tasek Gelugor</h2>
+      
+      <div class="author-info">
+        <div class="author-name">Mohd Azrulnizam bin Mohd Kamarudin</div>
+        <div>Pembangun Sistem / Pegawai Teknologi Maklumat</div>
+        <div>Jabatan Sokongan Akademik, Politeknik METrO Tasek Gelugor</div>
+        <div>Kementerian Pendidikan Tinggi, Pulau Pinang, Malaysia</div>
+        <div style="font-size: 9.5pt; color: #475569; margin-top: 4px;">E-mel: azrulnizam@pmtg.edu.my</div>
+      </div>
+    </div>
+
+    <!-- Bilingual Abstract Content -->
+    
+    <!-- 1. MALAY ABSTRACT -->
+    <div class="abstract-block">
+      <h3 class="abstract-title">Abstrak</h3>
+      <p class="abstract-text">
+        Pengurusan mesyuarat jawatankuasa kerja kerajaan secara konvensional sering berhadapan dengan kekangan kecekapan operasi akibat kebergantungan kepada kertas kerja fizikal, kelewatan aliran kelulusan minit, dan kesukaran menjejaki komitmen tindakan pegawai. Kajian inovasi ini membentangkan pembangunan dan pelaksanaan <strong>SmartGovMeeting PMTG</strong>, sebuah sistem pengurusan mesyuarat pintar berasaskan web yang direka untuk mendigitalkan keseluruhan kitaran hayat mesyuarat di Politeknik METrO Tasek Gelugor (PMTG). Sistem ini mengintegrasikan fungsi penjanaan memo jemputan automatik lengkap dengan kod QR, pendaftaran kehadiran hibrid berasaskan penapisan IP fizikal rangkaian lokal pelayan (10.141.3.73) dan rangkaian awan (localtunnel), modul penulisan minit bersegmen mengikut unit, aliran kerja kelulusan digital 4 peringkat bertandatangan digital, serta portal maklum balas tindakan (Cabutan Minit) interaktif.
+      </p>
+      <p class="abstract-text">
+        Metodologi pembangunan sistem yang digunakan ialah pendekatan pembangunan tangkas (Agile) bagi memastikan lelaran aplikasi sentiasa memenuhi piawaian Pekeliling Kemajuan Pentadbiran Awam (PKPA) Bil. 2 Tahun 1991. Hasil pelaksanaan menunjukkan impak yang ketara dalam kecekapan tadbir urus institusi, di mana masa kitaran kelulusan minit rasmi berjaya dikurangkan sebanyak 75% (daripada 7-14 hari kepada kurang dari 48 jam). Selain itu, sistem ini telah mengurangkan kos bahan cetak mesyuarat sebanyak 95% ke arah merealisasikan konsep pejabat tanpa kertas (paperless office). Paling utama, kadar KPI penyelesaian tindakan susulan keputusan mesyuarat meningkat secara drastik daripada 62% kepada 94% hasil daripada pemantauan papan pemuka (dashboard) yang berpusat. Kesimpulannya, SmartGovMeeting PMTG berjaya merekayasa tadbir urus digital institusi pendidikan tinggi sektor awam dengan menawarkan sistem pengurusan yang tangkas, lestari, berintegriti tinggi, dan sedia untuk direplikasi di agensi-agency kerajaan yang lain.
+      </p>
+      <div class="keywords">
+        <span>Kata Kunci:</span> Tadbir Urus Digital, Pengurusan Mesyuarat, Automasi Pejabat, Kelestarian, Kertas Kerja Inovasi.
+      </div>
+    </div>
+
+    <hr style="border: 0; border-top: 1px double #cbd5e1; margin: 25px 0;">
+
+    <!-- 2. ENGLISH ABSTRACT -->
+    <div class="abstract-block">
+      <h3 class="abstract-title" style="font-style: italic;">Abstract</h3>
+      <p class="abstract-text english-italic">
+        Conventional government committee meeting management often faces operational efficiency constraints due to reliance on physical paperwork, delays in the minutes approval workflow, and difficulties in tracking officers' action commitments. This innovation study presents the development and implementation of <strong>SmartGovMeeting PMTG</strong>, a web-based smart meeting management system designed to digitalize the entire meeting life cycle at Politeknik METrO Tasek Gelugor (PMTG). The system integrates an automated official invitation memo generator complete with QR codes, a hybrid attendance registration module based on physical network IP adapter filtering of the local server host (10.141.3.73) and cloud-tunneling (localtunnel), a unit-segmented minutes recording module, a four-tier digital approval workflow with digital signatures, and an interactive action item feedback (Minutes Extract) portal.
+      </p>
+      <p class="abstract-text english-italic">
+        The system development methodology utilizes an Agile approach to ensure application iterations comply with the Malaysian Public Sector Meeting Management guidelines (PKPA Bil. 2/1991). The implementation results demonstrate a significant impact on institutional governance efficiency, reducing the official minutes approval cycle time by 75% (from 7-14 days to under 48 hours). Furthermore, the system achieved a 95% reduction in meeting printing costs, driving PMTG towards a sustainable paperless office environment. Most importantly, the meeting decision action completion KPI rate surged from 62% to 94% due to the centralized real-time dashboard tracking. In conclusion, SmartGovMeeting PMTG successfully re-engineered digital governance in public sector higher education institutions by offering an agile, green, highly integrated, and auditable management tool that is ready for replication in other government agencies.
+      </p>
+      <div class="keywords" style="font-style: italic;">
+        <span>Keywords:</span> Digital Governance, Meeting Management, Office Automation, Sustainability, Innovation Paper.
+      </div>
+    </div>
+
+    <!-- Footer metadata -->
+    <div class="footer-line">
+      <span>SmartGovMeeting PMTG &copy; 2026</span>
+      <span>Bahagian Inovasi ICT PMTG</span>
+      <span>Diterbitkan: Ogos 2026</span>
+    </div>
+
+  </div>
+
+  <script>
+    if (window.lucide) window.lucide.createIcons();
+  </script>
+</body>
+</html>

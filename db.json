@@ -1,0 +1,1730 @@
+{
+  "members": [
+    {
+      "id": "m1",
+      "nama": "Hj. Mohd Yusaini Bin Mohamed Ali",
+      "jawatan": "Pengarah",
+      "unit": "Pengurusan Tertinggi",
+      "email": "mohd@pmtg.edu.my",
+      "telefon": "019-7291835",
+      "kategori": "Tetap",
+      "peranan": "Pengerusi"
+    },
+    {
+      "id": "m2",
+      "nama": "En. Mohd. Faiross Bin Ibrahim",
+      "jawatan": "Timbalan Pengarah",
+      "unit": "Pengurusan Tertinggi",
+      "email": "mohd.faiross@pmtg.edu.my",
+      "telefon": "019-4732295",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m3",
+      "nama": "Pn. Siti Fartimah Binti Mohamed Yusop",
+      "jawatan": "Ketua Jabatan Akademik",
+      "unit": "Jabatan Akademik",
+      "email": "sitifartimah@pmtg.edu.my",
+      "telefon": "019-7427615",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m4",
+      "nama": "Pn. Norhasaliza Binti Hassan",
+      "jawatan": "Ketua Jabatan Sokongan Akademik",
+      "unit": "Jabatan Sokongan Akademik",
+      "email": "norhasaliza@pmtg.edu.my",
+      "telefon": "019-1642010",
+      "kategori": "Tetap",
+      "peranan": "Penyemak"
+    },
+    {
+      "id": "m5",
+      "nama": "Pn. Rasma Suzieyantee Binti Ismail",
+      "jawatan": "Ketua Program DCV",
+      "unit": "Jabatan Akademik",
+      "email": "rasma@pmtg.edu.my",
+      "telefon": "019-3022757",
+      "kategori": "Tetap",
+      "peranan": "Ahli",
+      "operator": "Pn. Mashitah binti Osman",
+      "updatedAt": "2026-08-03T06:51:39.391Z"
+    },
+    {
+      "id": "m6",
+      "nama": "Pn. Farah Ariffah Binti Abd Aziz",
+      "jawatan": "Ketua Program DIT",
+      "unit": "Jabatan Akademik",
+      "email": "farah-ariffah@pmtg.edu.my",
+      "telefon": "019-1455737",
+      "kategori": "Tetap",
+      "peranan": "Ahli",
+      "operator": "Pn. Mashitah binti Osman",
+      "updatedAt": "2026-08-03T06:52:00.675Z"
+    },
+    {
+      "id": "m7",
+      "nama": "En. Ahmad Sani Bin Aman",
+      "jawatan": "Pensyarah Kanan",
+      "unit": "Jabatan Akademik",
+      "email": "ahmad_sani@pmtg.edu.my",
+      "telefon": "019-2033374",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m8",
+      "nama": "Cik Safitri Binti Salleh",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "safitri@pmtg.edu.my",
+      "telefon": "019-8526909",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m9",
+      "nama": "Pn. Suhaila Binti Sarif",
+      "jawatan": "Ketua CISEC",
+      "unit": "CISEC",
+      "email": "suhaila@pmtg.edu.my",
+      "telefon": "019-4952778",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m10",
+      "nama": "Pn. Norsulliatie Binti Muhammad",
+      "jawatan": "Ketua Unit Hal Ehwal Pelajar",
+      "unit": "Unit Hal Ehwal Pelajar",
+      "email": "sulliatie@pmtg.edu.my",
+      "telefon": "019-6658432",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m11",
+      "nama": "Ts. Mohd Azizi Bin Mohd Nor",
+      "jawatan": "Ketua Unit Pengurusan Keselamatan",
+      "unit": "Unit Pengurusan Keselamatan",
+      "email": "mohd_azizi@pmtg.edu.my",
+      "telefon": "019-6682914",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m12",
+      "nama": "Cik Ruslinawati Binti Abdul Ghani",
+      "jawatan": "Ketua Unit Pengurusan Psikologi",
+      "unit": "Unit Pengurusan Psikologi",
+      "email": "ruslina@pmtg.edu.my",
+      "telefon": "019-2189254",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m13",
+      "nama": "Ts. Hazleena Binti Osman",
+      "jawatan": "Ketua Unit Pengurusan Strategik, Prestasi & Risiko",
+      "unit": "Unit Pengurusan Strategik, Prestasi & Risiko",
+      "email": "hazleena_osman@pmtg.edu.my",
+      "telefon": "019-1192711",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m14",
+      "nama": "Dr. Beh Cheng Siew",
+      "jawatan": "Ketua IEC",
+      "unit": "Industry Education Centre",
+      "email": "csbeh@pmtg.edu.my",
+      "telefon": "019-2227127",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m15",
+      "nama": "En. Mohamad Azuan Bin Mohamed Arshad",
+      "jawatan": "Ketua Unit Pengurusan Aset",
+      "unit": "Unit Pengurusan Aset",
+      "email": "azuan-arshad@pmtg.edu.my",
+      "telefon": "019-8171594",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m16",
+      "nama": "Pn . Nur Jannah Binti Zainol Abidin",
+      "jawatan": "Ketua Unit Peperiksaan",
+      "unit": "Unit Peperiksaan",
+      "email": "nurjannah_za@pmtg.edu.my",
+      "telefon": "019-5041337",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m17",
+      "nama": "Pn. Nor Shazana Binti Abdul Rashid",
+      "jawatan": "Ketua Unit Latihan Dan Pendidikan Lanjutan",
+      "unit": "Unit Latihan Dan Pendidikan Lanjutan",
+      "email": "norshazana@pmtg.edu.my",
+      "telefon": "019-3134279",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m18",
+      "nama": "En. Muhammad Hafizul Bin Omar @ Osman",
+      "jawatan": "Ketua Unit Perhubungan dan Latihan Industri",
+      "unit": "Unit Perhubungan dan Latihan Industri",
+      "email": "hafizulomar@pmtg.edu.my",
+      "telefon": "019-6636305",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m19",
+      "nama": "Pn. Norhayati Binti Ismail",
+      "jawatan": "Ketua Unit Pembelajaran Digital",
+      "unit": "Unit Pembelajaran Digital",
+      "email": "norhayati@pmtg.edu.my",
+      "telefon": "019-6763900",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m20",
+      "nama": "Dr. Noorazzahrawani Binti Abdul Rani",
+      "jawatan": "Ketua Unit Penyelidikan, Inovasi dan Komersialan",
+      "unit": "Unit Penyelidikan, Inovasi dan Komersialan",
+      "email": "noorazzahrawani@pmtg.edu.my",
+      "telefon": "019-5355304",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m21",
+      "nama": "Pn. Norazlina Binti Othman",
+      "jawatan": "Ketua Unit Hubungan & Komunikasi Korporat",
+      "unit": "Unit Hubungan & Komunikasi Korporat",
+      "email": "lina_othman@pmtg.edu.my",
+      "telefon": "019-4716936",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m22",
+      "nama": "Pn. Effa Norhaiza Binti Omar",
+      "jawatan": "Ketua Unit Keusahawanan",
+      "unit": "Unit Keusahawanan",
+      "email": "effa@pmtg.edu.my",
+      "telefon": "019-1665358",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m23",
+      "nama": "Pn. Syahirah Binti Ibrahim",
+      "jawatan": "Ketua Unit Kebajikan, Kerohanian & Kebersihan",
+      "unit": "Unit Kebajikan, Kerohanian & Kebersihan",
+      "email": "syahirah@pmtg.edu.my",
+      "telefon": "019-8340774",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m24",
+      "nama": "En. Mohd Kamal Ariffin Bin Zakariya",
+      "jawatan": "Ketua Unit Pengurusan Perolehan",
+      "unit": "Unit Pengurusan Perolehan",
+      "email": "mohd_kamal@pmtg.edu.my",
+      "telefon": "019-1400601",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m25",
+      "nama": "En. Razlan Bin Burhaumudin",
+      "jawatan": "Ketua Unit Instruksional dan Multimedia",
+      "unit": "Unit Instruksional dan Multimedia",
+      "email": "razlan@pmtg.edu.my",
+      "telefon": "019-5050944",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m26",
+      "nama": "Ts. Siti Salmah Binti Mohd Pilus @ Philip",
+      "jawatan": "Ketua Unit Jaminan Kualiti",
+      "unit": "Unit Jaminan Kualiti",
+      "email": "sitisalmah@pmtg.edu.my",
+      "telefon": "019-9858915",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m27",
+      "nama": "Pn. Rodziah Binti Ibrahim",
+      "jawatan": "Ketua Unit Sukan, Kokurikulum & Kebudayaan",
+      "unit": "Unit Sukan, Kokurikulum & Kebudayaan",
+      "email": "rodziah@pmtg.edu.my",
+      "telefon": "019-4206936",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m28",
+      "nama": "En. Mohd Azrulnizam Bin Mohd Kamarudin",
+      "jawatan": "Ketua Unit Teknologi Maklumat & Komunikasi",
+      "unit": "Unit Teknologi Maklumat & Komunikasi",
+      "email": "azrulnizam@pmtg.edu.my",
+      "telefon": "019-4365650",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m29",
+      "nama": "Ts. Salbiah Binti Kasim",
+      "jawatan": "Ketua Unit Perpustakaan",
+      "unit": "Unit Perpustakaan",
+      "email": "salbiah@pmtg.edu.my",
+      "telefon": "019-2109692",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m30",
+      "nama": "En. Afiq Fahim Bin Md Yusof",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "afiq@pmtg.edu.my",
+      "telefon": "019-9587751",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m31",
+      "nama": "Pn. Nor Ridhwah Binti Abdullah Sani",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "ahmad_sani@pmtg.edu.my",
+      "telefon": "019-4915294",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m32",
+      "nama": "Dr. Majdah Binti Mahamud",
+      "jawatan": "Pensyarah Kanan",
+      "unit": "Jabatan Akademik",
+      "email": "majdah@pmtg.edu.my",
+      "telefon": "019-9277665",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m33",
+      "nama": "En. Khairul Anuar Bin Aziz",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "khairulanuaraziz@pmtg.edu.my",
+      "telefon": "019-1039248",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m34",
+      "nama": "Pn. Nor Sidah Binti Che Din",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "sidah@pmtg.edu.my",
+      "telefon": "019-5393185",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m35",
+      "nama": "Pn. Sarifah Nor Husna Binti Syed Alias",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "husna@pmtg.edu.my",
+      "telefon": "019-1277746",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m36",
+      "nama": "En. Muhamad Shahrum Nazar Bin Yahya",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "muhdshahrum@pmtg.edu.my",
+      "telefon": "019-4585147",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m37",
+      "nama": "Cik Nor Zalina Binti Salleh",
+      "jawatan": "Pegawai Teknologi Maklumat",
+      "unit": "Unit Teknologi Maklumat & Komunikasi",
+      "email": "zalinasalleh@pmtg.edu.my",
+      "telefon": "019-5013028",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m38",
+      "nama": "Pn. Nurul Ana Syahirah Binti Abdul Rahman",
+      "jawatan": "Pembantu Tadbir",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "nurul_ana@pmtg.edu.my",
+      "telefon": "019-2897605",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m39",
+      "nama": "En. Naqib Idlan Bin Nadzri",
+      "jawatan": "Pembantu Tadbir",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "naqib@pmtg.edu.my",
+      "telefon": "019-3279563",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m40",
+      "nama": "Pn. Nuraini Binti Shamsaimon",
+      "jawatan": "Pegawai Khidmat Pelanggan",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "nuraini@pmtg.edu.my",
+      "telefon": "019-8017341",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m41",
+      "nama": "En. Azman Bin Saaidin",
+      "jawatan": "Pembantu Operasi",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "azman_saidin@pmtg.edu.my",
+      "telefon": "019-9699769",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m42",
+      "nama": "Pn. Sarah Binti Mahamud",
+      "jawatan": "Pembantu Tadbir",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "sarah@pmtg.edu.my",
+      "telefon": "019-4842143",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m43",
+      "nama": "En. Mohd Zaidi Bin Zakariya",
+      "jawatan": "Pemandu Kenderaan",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "mohdzaidi@pmtg.edu.my",
+      "telefon": "019-4555825",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m44",
+      "nama": "En. Norkheilry Bin Md. Norhaini",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "norkheilry@pmtg.edu.my",
+      "telefon": "019-7734279",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m45",
+      "nama": "En. Mohamad Safardi Bin Ibrahim",
+      "jawatan": "Ketua Unit Pembangunan & Senggaraan",
+      "unit": "Unit Pembangunan & Senggaraan",
+      "email": "safardi@pmtg.edu.my",
+      "telefon": "019-4265186",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m46",
+      "nama": "Pn. Dayang Sari Binti Ismail",
+      "jawatan": "Ketua Unit Khidmat Pengurusan",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "dayangsari@pmtg.edu.my",
+      "telefon": "019-9596976",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m47",
+      "nama": "Pn. Norsyahirah Binti Khoder",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "norsyahirah@pmtg.edu.my",
+      "telefon": "019-5555659",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m48",
+      "nama": "Pn. Suraya Binti Razali",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "surayarazali@pmtg.edu.my",
+      "telefon": "019-8688440",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m49",
+      "nama": "Pn. Nurazila Binti Mustafa",
+      "jawatan": "Pembantu Tadbir",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "nurazila@pmtg.edu.my",
+      "telefon": "019-3785587",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m50",
+      "nama": "Pn. Noorizah Binti Ramatullah",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "noorizah@pmtg.edu.my",
+      "telefon": "019-1287353",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m51",
+      "nama": "Pn. Norhayati Binti Jamail",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "hayatijamail@pmtg.edu.my",
+      "telefon": "019-3187159",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m52",
+      "nama": "Pn. Shahidah Binti Seleman",
+      "jawatan": "Pembantu Kewangan",
+      "unit": "Unit Kewangan",
+      "email": "shahidah@pmtg.edu.my",
+      "telefon": "019-8507953",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m53",
+      "nama": "Pn. Mashitah Binti Che Hussain",
+      "jawatan": "Pencatat Minit",
+      "unit": "Unit Khidmat Pengurusan",
+      "email": "mashitah@pmtg.edu.my",
+      "telefon": "019-4122141",
+      "kategori": "Tetap",
+      "peranan": "Pencatat Minit"
+    },
+    {
+      "id": "m54",
+      "nama": "Pn. Mashitah Binti Osman",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "mashitah_osman@pmtg.edu.my",
+      "telefon": "019-9202455",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m55",
+      "nama": "En. Mohamad Kamal Bin Ghazali",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "mohamad_kamal@pmtg.edu.my",
+      "telefon": "019-6354619",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m56",
+      "nama": "En. Mohd Rizal Bin Mohd Zain",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "rizalzain@pmtg.edu.my",
+      "telefon": "019-6706267",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m57",
+      "nama": "Cik Nur Irdina Izzati Binti Mokhtar",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "cik@pmtg.edu.my",
+      "telefon": "019-9901454",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m58",
+      "nama": "Cik Nur Sabrina Binti Mohd Noh",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "cik@pmtg.edu.my",
+      "telefon": "019-4150687",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    },
+    {
+      "id": "m59",
+      "nama": "En. Muhammad Syahir Aizad Bin Abdul Razak",
+      "jawatan": "Pensyarah",
+      "unit": "Jabatan Akademik",
+      "email": "muhammad@pmtg.edu.my",
+      "telefon": "019-5950961",
+      "kategori": "Tetap",
+      "peranan": "Ahli"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "meet-1785735545119-i2nch6a81",
+      "nama": "MESYUARAT PEMBANGUNAN BUKU FLEX",
+      "bilangan": "4",
+      "tahun": "2024",
+      "tarikh": "2024-11-27",
+      "masa": "09.00 Pagi",
+      "tempat": "Bilik Persidangan, PMTG",
+      "pengerusiId": "m4",
+      "setiausahaId": "m28",
+      "urusetiaIds": [
+        "m28"
+      ],
+      "kategori": "Mesyuarat FLEX",
+      "status": "Selesai",
+      "kehadiran": {
+        "m1": "Bersebab",
+        "m2": "Hadir",
+        "m3": "Hadir",
+        "m4": "Hadir",
+        "m5": "Hadir",
+        "m6": "Hadir",
+        "m7": "Hadir",
+        "m8": "Hadir",
+        "m9": "Bersebab",
+        "m10": "Hadir",
+        "m11": "Hadir",
+        "m12": "Hadir",
+        "m13": "Hadir",
+        "m14": "Hadir",
+        "m15": "Bersebab",
+        "m16": "Hadir",
+        "m17": "Hadir",
+        "m18": "Hadir",
+        "m19": "Hadir",
+        "m20": "Hadir",
+        "m21": "Hadir",
+        "m22": "Hadir",
+        "m23": "Hadir",
+        "m24": "Hadir",
+        "m25": "Hadir",
+        "m26": "Hadir",
+        "m27": "Hadir",
+        "m28": "Hadir",
+        "m29": "Hadir"
+      },
+      "agenda": [
+        {
+          "id": "a1",
+          "tajuk": "Kata-Kata Aluan Pengerusi",
+          "subAgendas": [
+            "Ucapan Salam & Aluan Pengerusi"
+          ]
+        },
+        {
+          "id": "a2",
+          "tajuk": "Pengesahan Minit Mesyuarat",
+          "subAgendas": [
+            "Cadangan & Sokongan Pengesahan"
+          ]
+        },
+        {
+          "id": "a3",
+          "tajuk": "Perkara-Perkara Berbangkit",
+          "subAgendas": []
+        },
+        {
+          "id": "a4",
+          "tajuk": "Pembentangan Laporan Unit",
+          "subAgendas": []
+        },
+        {
+          "id": "a5",
+          "tajuk": "Hal-Hal Lain",
+          "subAgendas": []
+        },
+        {
+          "id": "a6",
+          "tajuk": "Ucapan Penutup",
+          "subAgendas": []
+        }
+      ],
+      "minit": {
+        "a1": {
+          "text": "Pengerusi memaklum bahawa tuan pengarah tidak dapat bersama kerana menghadiri mesyuarat di luar. Tuan Pengarah menyampaikan amanat agar setiap pelaksanaan dan progress perlu memenuhi tarikh yang telah ditetapkan.",
+          "tindakan": []
+        },
+        "a2": {
+          "text": "Minit Mesyuarat Pembangunan Buku telah disahkan oleh Pn Hazleena dan disokong oleh Puan Effa",
+          "tindakan": []
+        },
+        "a3": {
+          "text": "Pengerusi memaklumkan bahawa kelas PCIVP akan bermula dan semua persediaan perlu dipastikan berjalan lancar.",
+          "tindakan": []
+        },
+        "a4": {
+          "isUnitSplit": true,
+          "unitReports": [
+            {
+              "unitNama": "Jabatan Sokongan Akademik",
+              "text": "Mesyuarat membincangkan pengagihan buku kepada peserta dan memastikan semua peserta menerima bahan pembelajaran sebelum kelas bermula.",
+              "tindakan": [
+                {
+                  "id": "act-1785895225160-gsa27xsnk",
+                  "agendaTajuk": "PEMBENTANGAN LAPORAN UNIT - Jabatan Sokongan Akademik",
+                  "keputusan": "Selesaikan",
+                  "pegawaiId": "m6",
+                  "pegawaiNama": "Pn. Farah Ariffah Binti Abd Aziz",
+                  "pegawaiUnit": "Jabatan Akademik",
+                  "tarikhSiap": "2026-09-09",
+                  "status": "Dalam tindakan",
+                  "keutamaan": "Sederhana",
+                  "catatan": "Perlu diselesaikan"
+                }
+              ]
+            },
+            {
+              "unitNama": "Jabatan Sokongan Akademik",
+              "text": "Perkara yang dibincangkan:\na.jadual pengajaran;\nb.pembahagian modul kepada tenaga pengajar;\nc.kaedah penyampaian pembelajaran;\nd.penggunaan buku PCIVP sebagai rujukan utama.",
+              "tindakan": []
+            },
+            {
+              "unitNama": "Jabatan Sokongan Akademik",
+              "text": "Persediaan Pelaksanaan dan Pemantauan: Mesyuarat bersetuju bahawa\n\na.pemantauan kehadiran peserta perlu dilakukan;\nb.maklum balas peserta perlu dikumpulkan sepanjang program;\nc.penambahbaikan buku akan dibuat berdasarkan pengalaman pelaksanaan.",
+              "tindakan": []
+            }
+          ]
+        },
+        "a5": {
+          "text": "Kelas PCIVP akan bermula mengikut perancangan. Semua tenaga pengajar perlu memastikan kandungan modul disampaikan mengikut jadual.Penilaian keberkesanan buku PCIVP akan dibuat selepas tamat program.",
+          "tindakan": []
+        },
+        "a6": {
+          "text": "Pengerusi merakamkan setinggi-tinggi penghargaan kepada semua ahli mesyuarat. Mesyuarat ditangguhkan pada jam 11.00 pagi dengan tasbih kaffarah.",
+          "tindakan": []
+        }
+      },
+      "tidakHadirSebab": {
+        "m1": "Mesyuarat Luar",
+        "m9": "Mesyuarat Luar",
+        "m15": "Bengkel ICT"
+      },
+      "ucapanPenutup": "Pengerusi menangguhkan mesyuarat pengurusan kali ini dengan mengucapkan ribuan terima kasih.",
+      "disediakanOleh": "",
+      "disemakOleh": "",
+      "disahkanOleh": "",
+      "tarikhSedia": "",
+      "tarikhSemak": "",
+      "tarikhSah": "",
+      "createdAt": "2026-08-03T05:39:05.119Z",
+      "operator": "Pn. Mashitah binti Osman",
+      "updatedAt": "2026-08-05T03:40:12.562Z",
+      "ahliIds": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5",
+        "m6",
+        "m7",
+        "m8",
+        "m9",
+        "m10",
+        "m11",
+        "m12",
+        "m13",
+        "m14",
+        "m15",
+        "m16",
+        "m17",
+        "m18",
+        "m19",
+        "m20",
+        "m21",
+        "m22",
+        "m23",
+        "m24",
+        "m25",
+        "m26",
+        "m27",
+        "m28",
+        "m29"
+      ]
+    },
+    {
+      "id": "meet-1785738304776-929arx9tq",
+      "nama": "MESYUARAT MBJ",
+      "bilangan": "3",
+      "tahun": "2026",
+      "tarikh": "2026-08-03",
+      "masa": "08:30 Pagi",
+      "tempat": "Bilik Persidangan, PMTG",
+      "pengerusiId": "m1",
+      "setiausahaId": "m57",
+      "urusetiaIds": [
+        "m53"
+      ],
+      "ahliIds": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5",
+        "m6",
+        "m7",
+        "m8",
+        "m9",
+        "m10",
+        "m11",
+        "m12",
+        "m13",
+        "m14",
+        "m15",
+        "m16",
+        "m17",
+        "m18",
+        "m19",
+        "m20",
+        "m21",
+        "m22",
+        "m23",
+        "m24",
+        "m25",
+        "m26",
+        "m27",
+        "m28",
+        "m29",
+        "m30",
+        "m31",
+        "m32",
+        "m33",
+        "m34",
+        "m35",
+        "m36",
+        "m37",
+        "m38",
+        "m39",
+        "m40",
+        "m41",
+        "m42",
+        "m43",
+        "m44",
+        "m45",
+        "m46",
+        "m47",
+        "m48",
+        "m49",
+        "m50",
+        "m51",
+        "m52",
+        "m53",
+        "m54",
+        "m55",
+        "m56"
+      ],
+      "kategori": "Mesyuarat Senat",
+      "status": "Draf",
+      "kehadiran": {},
+      "agenda": [
+        {
+          "id": "a1",
+          "tajuk": "Kata-Kata Aluan Pengerusi",
+          "subAgendas": [
+            "Ucapan Salam & Aluan Pengerusi"
+          ]
+        },
+        {
+          "id": "a2",
+          "tajuk": "Pengesahan Minit Mesyuarat",
+          "subAgendas": [
+            "Cadangan & Sokongan Pengesahan"
+          ]
+        },
+        {
+          "id": "a3",
+          "tajuk": "Perkara-Perkara Berbangkit",
+          "subAgendas": []
+        },
+        {
+          "id": "a4",
+          "tajuk": "Pembentangan Laporan Unit",
+          "subAgendas": []
+        },
+        {
+          "id": "a5",
+          "tajuk": "Hal-Hal Lain",
+          "subAgendas": []
+        },
+        {
+          "id": "a6",
+          "tajuk": "Ucapan Penutup",
+          "subAgendas": []
+        }
+      ],
+      "minit": {},
+      "tidakHadirSebab": {},
+      "ucapanPenutup": "",
+      "disediakanOleh": "",
+      "disemakOleh": "",
+      "disahkanOleh": "",
+      "tarikhSedia": "",
+      "tarikhSemak": "",
+      "tarikhSah": "",
+      "createdAt": "2026-08-03T06:25:04.777Z",
+      "operator": "Pn. Mashitah binti Osman",
+      "updatedAt": "2026-08-03T06:25:36.531Z"
+    },
+    {
+      "id": "meet-1785739852051-xwawpm3sb",
+      "nama": "Mesyuarat Pembangunan Buku FLEX",
+      "bilangan": "1",
+      "tahun": "2026",
+      "tarikh": "2024-07-10",
+      "masa": "08:30 Pagi",
+      "tempat": "Bilik Persidangan, PMTG",
+      "pengerusiId": "m1",
+      "setiausahaId": "m9",
+      "urusetiaIds": [
+        "m54"
+      ],
+      "ahliIds": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5",
+        "m6",
+        "m9",
+        "m10",
+        "m11",
+        "m12",
+        "m13",
+        "m14",
+        "m17",
+        "m19",
+        "m23",
+        "m25",
+        "m26",
+        "m32",
+        "m37",
+        "m38",
+        "m39",
+        "m40"
+      ],
+      "tunnelUrl": "",
+      "kategori": "Mesyuarat FLEX",
+      "status": "Selesai",
+      "kehadiran": {},
+      "agenda": [
+        {
+          "id": "a1",
+          "tajuk": "Kata-Kata Aluan Pengerusi",
+          "subAgendas": [
+            "Ucapan Salam & Aluan Pengerusi"
+          ]
+        },
+        {
+          "id": "a2",
+          "tajuk": "Pengesahan Minit Mesyuarat",
+          "subAgendas": [
+            "Cadangan & Sokongan Pengesahan"
+          ]
+        },
+        {
+          "id": "a3",
+          "tajuk": "Perkara-Perkara Berbangkit",
+          "subAgendas": []
+        },
+        {
+          "id": "a4",
+          "tajuk": "Pembentangan Pembangunan Buku",
+          "subAgendas": [
+            "Agenda 1",
+            "Agenda 2",
+            "Agenda 3",
+            "Agenda 4"
+          ]
+        },
+        {
+          "id": "a5",
+          "tajuk": "Hal-Hal Lain",
+          "subAgendas": []
+        },
+        {
+          "id": "a6",
+          "tajuk": "Ucapan Penutup",
+          "subAgendas": []
+        }
+      ],
+      "minit": {
+        "a1": {
+          "text": "Pengerusi mengalu-alukan kehadiran semua ahli mesyuarat dan memaklumkan tujuan utama mesyuarat diadakan adalah bagi membincangkan cadangan pembangunan Buku PCIVP sebagai bahan rujukan rasmi bagi pelaksanaan program PCIVP.",
+          "tindakan": []
+        },
+        "a2": {
+          "text": "Minit disahkan oleh En Sani dan disokong oleh Puan Suhaila",
+          "tindakan": []
+        },
+        "a3": {
+          "text": "Pengerusi memohon untuk membuat rujukan bersama pihak FLEX untuk panduan penyediaan buku",
+          "tindakan": []
+        },
+        "a4": {
+          "text": "Agenda 1:\nMesyuarat bersetuju bahawa penghasilan buku PCIVP perlu dilaksanakan bagi:\n\nmenyediakan panduan lengkap kepada peserta dan tenaga pengajar;\nmenyeragamkan kandungan pembelajaran;\nmemudahkan proses pengajaran dan pembelajaran;\nmenjadi bahan rujukan sepanjang pelaksanaan program.\n\nAgenda 2:\nMesyuarat bersetuju bahawa penghasilan buku PCIVP perlu dilaksanakan bagi:\n\nmenyediakan panduan lengkap kepada peserta dan tenaga pengajar;\nmenyeragamkan kandungan pembelajaran;\nmemudahkan proses pengajaran dan pembelajaran;\nmenjadi bahan rujukan sepanjang pelaksanaan program\n\nAgenda 3: Perbincangan Kandungan Buku\nAhli mesyuarat membincangkan cadangan kandungan utama buku seperti berikut:\n\nPengenalan PCIVP\nObjektif dan hasil pembelajaran program\nStruktur pelaksanaan PCIVP\nModul pembelajaran\nNota dan panduan aktiviti\nLatihan dan tugasan peserta\nPenilaian dan kaedah pemarkahan\nLampiran berkaitan\n\nAgenda 4: Pembahagian Tugas Penyediaan Kandungan\nMesyuarat bersetuju untuk membahagikan tugas kepada ahli yang terlibat bagi penyediaan modul, semakan kandungan dan penyediaan bahan sokongan.",
+          "tindakan": []
+        },
+        "a5": {
+          "text": "Keputusan Mesyuarat\nBuku PCIVP akan dibangunkan sebagai dokumen rujukan utama.\nSetiap ahli bertanggungjawab menyediakan kandungan mengikut pembahagian yang ditetapkan.\nDraf awal buku perlu disediakan untuk semakan pada mesyuarat seterusnya.",
+          "tindakan": []
+        },
+        "a6": {
+          "text": "Pengerusi meminta pensyarah memastikan kualiti pengisian buku yang dihasilkan adalah mengikut keperluan dan standard yang ditetapkan.",
+          "tindakan": []
+        }
+      },
+      "tidakHadirSebab": {},
+      "ucapanPenutup": "Pengerusi menangguhkan mesyuarat pengurusan kali ini dengan mengucapkan ribuan terima kasih.",
+      "disediakanOleh": "",
+      "disemakOleh": "",
+      "disahkanOleh": "",
+      "tarikhSedia": "",
+      "tarikhSemak": "",
+      "tarikhSah": "",
+      "createdAt": "2026-08-03T06:50:52.052Z",
+      "operator": "Pn. Mashitah binti Osman",
+      "updatedAt": "2026-08-03T07:00:25.746Z"
+    },
+    {
+      "id": "meet-1785895146032-u446cuhr6",
+      "nama": "Mesyuarat Akademik",
+      "bilangan": "1",
+      "tahun": "2026",
+      "tarikh": "2026-08-05",
+      "masa": "08:30 Pagi",
+      "tempat": "Bilik Persidangan, PMTG",
+      "pengerusiId": "m3",
+      "setiausahaId": "m13",
+      "urusetiaIds": [
+        "m27"
+      ],
+      "ahliIds": [
+        "m3",
+        "m4",
+        "m5",
+        "m6",
+        "m7",
+        "m8",
+        "m9",
+        "m10",
+        "m11",
+        "m12",
+        "m13",
+        "m14",
+        "m15",
+        "m16",
+        "m17",
+        "m18",
+        "m19",
+        "m20",
+        "m21",
+        "m22",
+        "m23",
+        "m24",
+        "m25",
+        "m26",
+        "m27",
+        "m28",
+        "m29",
+        "m30",
+        "m31",
+        "m32",
+        "m33",
+        "m34",
+        "m35",
+        "m36",
+        "m37",
+        "m38",
+        "m39",
+        "m40",
+        "m41",
+        "m42"
+      ],
+      "tunnelUrl": "",
+      "kategori": "Mesyuarat Akademik",
+      "status": "Draf",
+      "kehadiran": {},
+      "agenda": [
+        {
+          "id": "a1",
+          "tajuk": "Kata-Kata Aluan Pengerusi",
+          "subAgendas": [
+            "Ucapan Salam & Aluan Pengerusi"
+          ]
+        },
+        {
+          "id": "a2",
+          "tajuk": "Pengesahan Minit Mesyuarat",
+          "subAgendas": [
+            "Cadangan & Sokongan Pengesahan"
+          ]
+        },
+        {
+          "id": "a3",
+          "tajuk": "Perkara-Perkara Berbangkit",
+          "subAgendas": []
+        },
+        {
+          "id": "a4",
+          "tajuk": "Pembentangan Laporan Unit",
+          "subAgendas": []
+        },
+        {
+          "id": "a5",
+          "tajuk": "Hal-Hal Lain",
+          "subAgendas": []
+        },
+        {
+          "id": "a6",
+          "tajuk": "Ucapan Penutup",
+          "subAgendas": []
+        }
+      ],
+      "minit": {},
+      "tidakHadirSebab": {},
+      "ucapanPenutup": "",
+      "disediakanOleh": "",
+      "disemakOleh": "",
+      "disahkanOleh": "",
+      "tarikhSedia": "",
+      "tarikhSemak": "",
+      "tarikhSah": "",
+      "createdAt": "2026-08-05T01:59:06.034Z"
+    },
+    {
+      "id": "meet-1785901166167-xe4p49t57",
+      "nama": "MESYUARAT ASET",
+      "bilangan": "1",
+      "tahun": "2026",
+      "tarikh": "2026-08-08",
+      "masa": "08:30 Pagi",
+      "tempat": "Bilik Persidangan, PMTG",
+      "pengerusiId": "m15",
+      "setiausahaId": "m11",
+      "urusetiaIds": [
+        "m7"
+      ],
+      "ahliIds": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5",
+        "m6",
+        "m7",
+        "m8",
+        "m9",
+        "m10",
+        "m11",
+        "m12",
+        "m13",
+        "m14",
+        "m15",
+        "m16",
+        "m17",
+        "m18",
+        "m19",
+        "m20",
+        "m21",
+        "m22",
+        "m23",
+        "m24",
+        "m25",
+        "m26",
+        "m27",
+        "m28",
+        "m29",
+        "m30",
+        "m31",
+        "m32",
+        "m33",
+        "m34",
+        "m35",
+        "m36",
+        "m37",
+        "m38",
+        "m39",
+        "m40",
+        "m41",
+        "m42",
+        "m43",
+        "m44",
+        "m45",
+        "m46"
+      ],
+      "tunnelUrl": "",
+      "kategori": "Mesyuarat Pengurusan",
+      "status": "Selesai",
+      "kehadiran": {},
+      "agenda": [
+        {
+          "id": "a1",
+          "tajuk": "Kata-Kata Aluan Pengerusi",
+          "subAgendas": [
+            "Ucapan Salam & Aluan Pengerusi"
+          ]
+        },
+        {
+          "id": "a2",
+          "tajuk": "Pengesahan Minit Mesyuarat",
+          "subAgendas": [
+            "Cadangan & Sokongan Pengesahan"
+          ]
+        },
+        {
+          "id": "a3",
+          "tajuk": "Perkara-Perkara Berbangkit",
+          "subAgendas": []
+        },
+        {
+          "id": "a4",
+          "tajuk": "Pembentangan Laporan Unit",
+          "subAgendas": []
+        },
+        {
+          "id": "a5",
+          "tajuk": "Hal-Hal Lain",
+          "subAgendas": []
+        },
+        {
+          "id": "a6",
+          "tajuk": "Ucapan Penutup",
+          "subAgendas": []
+        }
+      ],
+      "minit": {
+        "a1": {
+          "text": "Pengerusi mengalu-alukan kehadiran semua jawatankuasa akademik PMTG. Pengerusi menekankan kepentingan mematuhi takwim akademik KPT dan memantau prestasi PDP pelajar Semester I.",
+          "tindakan": []
+        },
+        "a2": {
+          "text": "Minit Mesyuarat Akademik Bilangan 2 Tahun 2026 yang lepas dibentang dan disahkan secara rasmi.",
+          "tindakan": []
+        },
+        "a3": {
+          "text": "Perkara berbangkit mengenai kes kecurangan akademik pelajar peperiksaan akhir semester pendek telah diselesaikan secara tatatertib.",
+          "tindakan": [
+            {
+              "id": "act-1785901267607-qu5q5pktr",
+              "agendaTajuk": "Perenggan 3.0: PERKARA-PERKARA BERBANGKIT",
+              "keputusan": "Penyelaras Aset",
+              "pegawaiId": "m28",
+              "pegawaiNama": "En. Mohd Azrulnizam Bin Mohd Kamarudin",
+              "pegawaiUnit": "Unit Teknologi Maklumat & Komunikasi",
+              "tarikhSiap": "2026-08-09",
+              "status": "Dalam tindakan",
+              "keutamaan": "Sederhana",
+              "catatan": "Pegawai ICT perlu sahkan aset"
+            }
+          ]
+        },
+        "a4": {
+          "isUnitSplit": true,
+          "unitReports": [
+            {
+              "unitNama": "Jabatan Akademik",
+              "text": "Pembentangan laporan prestasi akademik dan pencapaian peperiksaan pelajar bagi Sesi II: 2025/2026.",
+              "tindakan": []
+            },
+            {
+              "unitNama": "Jabatan Sokongan Akademik",
+              "text": "Pembentangan laporan status pendaftaran pelajar baharu dan aktiviti kelab/persatuan.",
+              "tindakan": []
+            },
+            {
+              "unitNama": "Unit Khidmat Pengurusan",
+              "text": "Pembentangan status perbelanjaan kewangan, bajet tahunan, perolehan alatan makmal, dan kebajikan staf PMTG.",
+              "tindakan": []
+            }
+          ]
+        },
+        "a5": {
+          "text": "Ketua Unit Pembelajaran Digital mencadangkan pengaktifan akaun Microsoft Teams bagi pensyarah sambilan luar.",
+          "tindakan": []
+        },
+        "a6": {
+          "text": "Pengerusi meminta pensyarah memastikan kualiti penilaian berterusan (PB) dipelihara. Mesyuarat ditangguhkan.",
+          "tindakan": []
+        }
+      },
+      "tidakHadirSebab": {},
+      "ucapanPenutup": "Pengerusi menangguhkan mesyuarat pengurusan kali ini dengan mengucapkan ribuan terima kasih.",
+      "disediakanOleh": "",
+      "disemakOleh": "",
+      "disahkanOleh": "",
+      "tarikhSedia": "",
+      "tarikhSemak": "",
+      "tarikhSah": "",
+      "createdAt": "2026-08-05T03:39:26.168Z",
+      "operator": "Pn. Mashitah binti Osman",
+      "updatedAt": "2026-08-05T03:41:07.607Z"
+    }
+  ],
+  "actions": [
+    {
+      "id": "act-1785895225160-gsa27xsnk",
+      "meetingId": "meet-1785735545119-i2nch6a81",
+      "meetingNama": "MESYUARAT PEMBANGUNAN BUKU FLEX",
+      "meetingBilangan": "4",
+      "meetingTahun": "2024",
+      "agendaId": "a4",
+      "agendaTajuk": "PEMBENTANGAN LAPORAN UNIT - Jabatan Sokongan Akademik",
+      "keputusan": "Selesaikan",
+      "pegawaiId": "m6",
+      "pegawaiNama": "Pn. Farah Ariffah Binti Abd Aziz",
+      "pegawaiUnit": "Jabatan Akademik",
+      "tarikhSiap": "2026-09-09",
+      "status": "Dalam tindakan",
+      "keutamaan": "Sederhana",
+      "catatan": "Perlu diselesaikan",
+      "lampiran": "",
+      "updatedAt": "2026-08-05T03:40:12.562Z",
+      "createdAt": "2026-08-05T02:00:25.160Z"
+    },
+    {
+      "id": "act-1785901267607-qu5q5pktr",
+      "meetingId": "meet-1785901166167-xe4p49t57",
+      "meetingNama": "MESYUARAT ASET",
+      "meetingBilangan": "1",
+      "meetingTahun": "2026",
+      "agendaId": "a3",
+      "agendaTajuk": "Perenggan 3.0: PERKARA-PERKARA BERBANGKIT",
+      "keputusan": "Penyelaras Aset",
+      "pegawaiId": "m28",
+      "pegawaiNama": "En. Mohd Azrulnizam Bin Mohd Kamarudin",
+      "pegawaiUnit": "Unit Teknologi Maklumat & Komunikasi",
+      "tarikhSiap": "2026-08-09",
+      "status": "Dalam tindakan",
+      "keutamaan": "Sederhana",
+      "catatan": "Pegawai ICT perlu sahkan aset",
+      "lampiran": "",
+      "updatedAt": "2026-08-05T03:41:07.607Z",
+      "createdAt": "2026-08-05T03:41:07.607Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1785901267610-uv4epdp4n",
+      "timestamp": "2026-08-05T03:41:07.624Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT ASET (Bil. 1/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785901212571-ve0p0h385",
+      "timestamp": "2026-08-05T03:40:12.571Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 4/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785901166171-3qj1lq91q",
+      "timestamp": "2026-08-05T03:39:26.171Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Daftar Mesyuarat",
+      "details": "Mendaftar mesyuarat baru: MESYUARAT ASET (Bil. 1/2026)"
+    },
+    {
+      "id": "log-1785895225163-8jlpaeddq",
+      "timestamp": "2026-08-05T02:00:25.163Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 4/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785895146035-0d5h7ofcl",
+      "timestamp": "2026-08-05T01:59:06.035Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Daftar Mesyuarat",
+      "details": "Mendaftar mesyuarat baru: Mesyuarat Akademik (Bil. 1/2026)"
+    },
+    {
+      "id": "log-1785804695945-5ah20t6rd",
+      "timestamp": "2026-08-04T00:51:35.945Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 4/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785804581469-ogjv4uwvr",
+      "timestamp": "2026-08-04T00:49:41.469Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 4/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785804548787-jgzgxqwdp",
+      "timestamp": "2026-08-04T00:49:08.787Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 4/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785804381067-6llkulv00",
+      "timestamp": "2026-08-04T00:46:21.067Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 4/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785804314304-sljcbamyj",
+      "timestamp": "2026-08-04T00:45:14.304Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 3/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785804172696-d5art2jpc",
+      "timestamp": "2026-08-04T00:42:52.696Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 3/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785804032209-lqbh6x8fk",
+      "timestamp": "2026-08-04T00:40:32.209Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 3/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803760489-3tb385vh1",
+      "timestamp": "2026-08-04T00:36:00.489Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 3/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803686239-rmdcita2i",
+      "timestamp": "2026-08-04T00:34:46.239Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 2/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803627382-9vrsbepdc",
+      "timestamp": "2026-08-04T00:33:47.382Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 2/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803560035-mbp3c7gdr",
+      "timestamp": "2026-08-04T00:32:40.035Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 2/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803498493-pyknh26j7",
+      "timestamp": "2026-08-04T00:31:38.494Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 2/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803459000-w5fs79cj0",
+      "timestamp": "2026-08-04T00:30:59.000Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 2/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803408979-qd7z7uyz8",
+      "timestamp": "2026-08-04T00:30:08.979Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 1/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803284119-x51oodbn9",
+      "timestamp": "2026-08-04T00:28:04.119Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 1/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803194376-rb6s4rffk",
+      "timestamp": "2026-08-04T00:26:34.376Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 1/2024). Status: Selesai"
+    },
+    {
+      "id": "log-1785803176165-zjcvjrasp",
+      "timestamp": "2026-08-04T00:26:16.165Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. 1/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785803027515-v3yah4mvc",
+      "timestamp": "2026-08-04T00:23:47.515Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::ffff:10.141.3.73",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. BIL 1/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785740654186-z4yuv721w",
+      "timestamp": "2026-08-03T07:04:14.186Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. BIL 1/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785740505759-djn018sht",
+      "timestamp": "2026-08-03T07:01:45.760Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PEMBANGUNAN BUKU FLEX (Bil. BIL 1/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785740425748-pxw7jzrp7",
+      "timestamp": "2026-08-03T07:00:25.748Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: Mesyuarat Pembangunan Buku FLEX (Bil. 1/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785740353174-ww3mfjih9",
+      "timestamp": "2026-08-03T06:59:13.174Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: Mesyuarat Pembangunan Buku FLEX (Bil. 1/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785739947602-3cff077gq",
+      "timestamp": "2026-08-03T06:52:27.602Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: Mesyuarat Pembangunan Buku FLEX (Bil. 1/2026). Status: Draf"
+    },
+    {
+      "id": "log-1785739920677-0hs0g1bdq",
+      "timestamp": "2026-08-03T06:52:00.677Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Ahli",
+      "details": "Mengemas kini ahli: Pn. Farah Ariffah Binti Abd Aziz"
+    },
+    {
+      "id": "log-1785739899409-s5am3ufvb",
+      "timestamp": "2026-08-03T06:51:39.409Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Ahli",
+      "details": "Mengemas kini ahli: Pn. Rasma Suzieyantee Binti Ismail"
+    },
+    {
+      "id": "log-1785739852054-i3ie7kypa",
+      "timestamp": "2026-08-03T06:50:52.054Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Daftar Mesyuarat",
+      "details": "Mendaftar mesyuarat baru: Mesyuarat Pembangunan Buku FLEX (Bil. 1/2026)"
+    },
+    {
+      "id": "log-1785739059230-snl9c8fa9",
+      "timestamp": "2026-08-03T06:37:39.230Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Tindakan",
+      "details": "Kemas kini status tindakan: KPRO... kepada [Dalam tindakan]"
+    },
+    {
+      "id": "log-1785739053664-exqark94c",
+      "timestamp": "2026-08-03T06:37:33.666Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Tindakan",
+      "details": "Kemas kini status tindakan: KPRO... kepada [Selesai]"
+    },
+    {
+      "id": "log-1785738336534-jsynno1sk",
+      "timestamp": "2026-08-03T06:25:36.534Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT MBJ (Bil. 3/2026). Status: Draf"
+    },
+    {
+      "id": "log-1785738304780-p6w5vrz4q",
+      "timestamp": "2026-08-03T06:25:04.780Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Daftar Mesyuarat",
+      "details": "Mendaftar mesyuarat baru: MESYUARAT MBJ (Bil. 3/2026)"
+    },
+    {
+      "id": "log-1785738011498-p2yddn1vl",
+      "timestamp": "2026-08-03T06:20:11.498Z",
+      "user": "Notifikasi [Email] (Tunggakan) dihantar kepada En. Mohd Azrulnizam Bin Mohd Kamarudin",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785737989830-of60lwwwe",
+      "timestamp": "2026-08-03T06:19:49.830Z",
+      "user": "Notifikasi [Email] (Tunggakan) dihantar kepada En. Mohd Azrulnizam Bin Mohd Kamarudin",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785737921234-lqfjwtrsc",
+      "timestamp": "2026-08-03T06:18:41.234Z",
+      "user": "Notifikasi [Email] (Tunggakan) dihantar kepada En. Mohd Azrulnizam Bin Mohd Kamarudin",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785737856603-ozuwn5z23",
+      "timestamp": "2026-08-03T06:17:36.603Z",
+      "user": "Notifikasi [WhatsApp] (Tunggakan) dihantar kepada En. Mohd Azrulnizam Bin Mohd Kamarudin",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785737843585-4i29lj0zu",
+      "timestamp": "2026-08-03T06:17:23.585Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785737372167-wrgj2yhnk",
+      "timestamp": "2026-08-03T06:09:32.168Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Tindakan",
+      "details": "Kemas kini status tindakan: KPRO... kepada [undefined]"
+    },
+    {
+      "id": "log-1785736994709-2u9h50jlj",
+      "timestamp": "2026-08-03T06:03:14.710Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785736776553-vxm4bttix",
+      "timestamp": "2026-08-03T05:59:36.553Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785736664415-usu5cb5ax",
+      "timestamp": "2026-08-03T05:57:44.415Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785736629958-ea0jc77wl",
+      "timestamp": "2026-08-03T05:57:09.958Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Selesai"
+    },
+    {
+      "id": "log-1785736549005-504l42xe2",
+      "timestamp": "2026-08-03T05:55:49.011Z",
+      "user": "Hj. Mohd Yusaini Bin Mohamed Ali (Simulasi QR)",
+      "ip": "::1",
+      "action": "Kemas Kini Mesyuarat",
+      "details": "Mengemas kini mesyuarat: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026). Status: Draf"
+    },
+    {
+      "id": "log-1785735545128-ptdg7pbcj",
+      "timestamp": "2026-08-03T05:39:05.128Z",
+      "user": "Pn. Mashitah binti Osman",
+      "ip": "::1",
+      "action": "Daftar Mesyuarat",
+      "details": "Mendaftar mesyuarat baru: MESYUARAT PENGURUSAN PMTG (Bil. BIL 7/2026)"
+    },
+    {
+      "id": "log-init",
+      "timestamp": "2026-08-03T13:28:00+08:00",
+      "user": "Sistem",
+      "ip": "127.0.0.1",
+      "action": "Inisialisasi Sistem",
+      "details": "Pangkalan data SmartGovMeeting diwujudkan dengan 28 pegawai PMTG."
+    }
+  ],
+  "repository": []
+}

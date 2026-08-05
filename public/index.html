@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartGovMeeting - Sistem Pengurusan Mesyuarat Pintar Kerajaan</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="index.css?v=1.0.2">
+  
+  <!-- Direct Print Style Fixes (Bypass browser CSS caching) -->
+  <style>
+    @media print {
+      .no-print, 
+      .sidebar, 
+      .top-header, 
+      .btn, 
+      .theme-toggle, 
+      .toast-container,
+      .modal-backdrop,
+      header, 
+      aside,
+      button,
+      .page-title-section {
+        display: none !important;
+      }
+      
+      .app-layout, .main-content, .view-container, .view-container > div, .memo-layout-container {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      
+      body, .minute-print-preview {
+        background: white !important;
+        color: black !important;
+        font-family: Arial, sans-serif !important;
+        font-size: 11pt !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .print-page-break {
+        page-break-after: always !important;
+        break-after: always !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+      textarea.feedback-input,
+      button.save-feedback-btn {
+        display: none !important;
+      }
+    }
+    .print-only {
+      display: none;
+    }
+  </style>
+  
+  <!-- Chart.js CDN for visual KPI charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- QRCode.js CDN for attendance QR codes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+  <!-- SheetJS CDN for importing Excel/CSV data -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.mini.min.js"></script>
+  
+  <!-- Lucide Icons CDN for clean micro-icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- App Container -->
+  <div class="app-layout" id="appLayout">
+    
+    <!-- Sidebar Nav (Hidden on print) -->
+    <aside class="sidebar no-print">
+      <div class="sidebar-brand">
+        <div class="logo-icon">
+          <i data-lucide="layers"></i>
+        </div>
+        <div>
+          <h1 class="logo-title">SmartGov</h1>
+          <span class="logo-subtitle">Meeting System</span>
+        </div>
+      </div>
+      
+      <!-- User profile switcher (simulates roles/officers) -->
+      <div class="user-profile-widget">
+        <label for="operatorSelect" class="profile-label">
+          <i data-lucide="shield-check"></i> Mod Operasi
+        </label>
+        <select id="operatorSelect" class="operator-select">
+          <option value="Pn. Mashitah binti Osman" data-role="Setiausaha/Pencatat">Pn. Mashitah (Pencatat)</option>
+          <option value="En. Mohd Yusaini bin Mohamed Ali" data-role="Pengarah/Pengerusi">En. Yusaini (Pengerusi)</option>
+          <option value="Pn. Norhasaliza binti Hassan" data-role="KJ Sokongan Akademik/Penyemak">Pn. Norhasaliza (Penyemak)</option>
+          <option value="En. Mohd Azrulnizam bin Mohd Kamarudin" data-role="Ketua Unit ICT">En. Azrulnizam (ICT)</option>
+        </select>
+        <div class="user-role-badge" id="operatorRoleBadge">Setiausaha/Pencatat</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- GROUP 1: UTAMA & KPI -->
+        <div class="nav-group-title">Utama & Analisis</div>
+        <a href="#dashboard" class="nav-item active" data-view="dashboard">
+          <i data-lucide="layout-dashboard"></i> Dashboard KPI
+        </a>
+        
+        <!-- GROUP 2: PRA-MESYUARAT -->
+        <div class="nav-group-title">Pra-Mesyuarat</div>
+        <a href="#meetings" class="nav-item" data-view="meetings">
+          <i data-lucide="calendar"></i> Mesyuarat & Agenda
+        </a>
+        <a href="#memo" class="nav-item" data-view="memo">
+          <i data-lucide="mail"></i> Memo Automatik
+        </a>
+        <a href="#members" class="nav-item" data-view="members">
+          <i data-lucide="users"></i> Pengurusan Ahli
+        </a>
+        
+        <!-- GROUP 3: SEMASA MESYUARAT -->
+        <div class="nav-group-title">Semasa Mesyuarat</div>
+        <a href="#attendance" class="nav-item" data-view="attendance">
+          <i data-lucide="qr-code"></i> Kehadiran (QR)
+        </a>
+        <a href="#minutes" class="nav-item" data-view="minutes">
+          <i data-lucide="file-text"></i> Penulisan Minit
+        </a>
+
+        <!-- GROUP 4: PASCA-MESYUARAT -->
+        <div class="nav-group-title">Pasca-Mesyuarat</div>
+        <a href="#approval" class="nav-item" data-view="approval">
+          <i data-lucide="lock"></i> Kelulusan & Lock
+        </a>
+        <a href="#extract" class="nav-item" data-view="extract">
+          <i data-lucide="check-square"></i> Cabutan Minit
+        </a>
+        <a href="#repository" class="nav-item" data-view="repository">
+          <i data-lucide="folder-open"></i> Repositori Fail
+        </a>
+
+        <!-- GROUP 5: PEMANTAUAN & SISTEM -->
+        <div class="nav-group-title">Pemantauan & Tetapan</div>
+        <a href="#monitoring" class="nav-item" data-view="monitoring">
+          <i data-lucide="trending-up"></i> Tindakan & Reminder
+        </a>
+        <a href="#search" class="nav-item" data-view="search">
+          <i data-lucide="search"></i> Carian Pintar
+        </a>
+        <a href="#reports" class="nav-item" data-view="reports">
+          <i data-lucide="file-spreadsheet"></i> Laporan Lanjut
+        </a>
+        <a href="#audit" class="nav-item" data-view="audit">
+          <i data-lucide="history"></i> Audit Trail
+        </a>
+        <a href="manual.html" target="_blank" class="nav-item no-print">
+          <i data-lucide="help-circle"></i> Manual Penggunaan
+        </a>
+        <a href="inovasi.html" target="_blank" class="nav-item no-print">
+          <i data-lucide="award"></i> Laporan Inovasi
+        </a>
+        <a href="abstrak.html" target="_blank" class="nav-item no-print">
+          <i data-lucide="file-text"></i> Abstrak Sistem
+        </a>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <span>PMTG &copy; 2026</span>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+      
+      <!-- Top header bar (Hidden on print) -->
+      <header class="top-header no-print">
+        <div class="header-search-wrapper">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" placeholder="Cari mesyuarat, pegawai atau tindakan..." class="header-search-input" id="globalHeaderSearch">
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary btn-icon" id="quickAddMeetingBtn" title="Daftar Mesyuarat Cepat">
+            <i data-lucide="plus-circle"></i> Mesyuarat Baru
+          </button>
+          <div class="notification-badge" id="alertNotificationBadge">
+            <i data-lucide="bell"></i>
+            <span class="badge-dot hidden"></span>
+          </div>
+          <div class="theme-toggle" id="themeToggleBtn" title="Tukar Mod Gelap/Cerah">
+            <i data-lucide="moon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic View Wrapper -->
+      <div class="view-container" id="viewContainer">
+        <!-- Dynamic content injected here by Javascript modules -->
+        <div class="loading-spinner-wrapper">
+          <div class="spinner"></div>
+          <p>Memuatkan sistem SmartGovMeeting...</p>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Global Modal System -->
+  <div class="modal-backdrop hidden" id="globalModalBackdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="globalModalTitle">Modal Title</h3>
+        <button class="modal-close-btn" id="globalModalCloseBtn"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body" id="globalModalBody">
+        <!-- Injected modal content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Global JS Controller -->
+  <script src="app.js"></script>
+</body>
+</html>

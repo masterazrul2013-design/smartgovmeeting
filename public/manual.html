@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Pengguna - SmartGovMeeting PMTG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --color-primary: #1e3a8a;
+      --color-secondary: #3b82f6;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --bg-primary: #f8fafc;
+      --bg-card: #ffffff;
+      --text-primary: #1e293b;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* Layout Wrapper */
+    .manual-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+    }
+
+    /* Sidebar Navigation */
+    .manual-sidebar {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 24px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .sidebar-brand i {
+      color: var(--color-secondary);
+      width: 28px;
+      height: 28px;
+    }
+
+    .sidebar-brand h1 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-group-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 1px;
+      margin: 20px 0 8px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255,255,255,0.05);
+      color: #ffffff;
+    }
+
+    .nav-link.active {
+      background-color: var(--color-secondary);
+      color: #ffffff;
+    }
+
+    /* Main Content Area */
+    .manual-content {
+      padding: 40px 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      overflow-y: auto;
+    }
+
+    /* Typography */
+    h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 24px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 16px 0 8px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-size: 14.5px;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin-left: 24px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Visual Blocks */
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-alert {
+      background-color: #eff6ff;
+      border-left: 4px solid var(--color-secondary);
+      padding: 16px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #1e40af;
+    }
+
+    .info-alert i {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    .badge-primary { background-color: var(--color-primary); }
+    .badge-secondary { background-color: var(--color-secondary); }
+    .badge-success { background-color: var(--color-success); }
+    .badge-warning { background-color: var(--color-warning); }
+
+    /* Image mockups style */
+    .mockup-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .mockup-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.2s;
+    }
+
+    .mockup-image:hover {
+      transform: scale(1.01);
+    }
+
+    .mockup-caption {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .manual-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      margin-top: 40px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .manual-layout {
+        grid-template-columns: 1fr;
+      }
+      .manual-sidebar {
+        display: none;
+      }
+      .manual-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="manual-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="manual-sidebar">
+      <div class="sidebar-brand">
+        <i data-lucide="layers"></i>
+        <div>
+          <h1>SmartGov</h1>
+          <span style="font-size: 10px; color: #94a3b8; display: block;">Meeting System PMTG</span>
+        </div>
+      </div>
+
+      <div class="nav-group-title">Kandungan</div>
+      <a href="#pengenalan" class="nav-link active"><i data-lucide="info" style="width:16px;"></i> Pengenalan</a>
+      
+      <div class="nav-group-title">Panduan Modul</div>
+      <a href="#kpi" class="nav-link"><i data-lucide="layout-dashboard" style="width:16px;"></i> 1. Dashboard KPI</a>
+      <a href="#daftar" class="nav-link"><i data-lucide="calendar" style="width:16px;"></i> 2. Daftar & Agenda</a>
+      <a href="#memo" class="nav-link"><i data-lucide="mail" style="width:16px;"></i> 3. Memo Automatik</a>
+      <a href="#kehadiran" class="nav-link"><i data-lucide="qr-code" style="width:16px;"></i> 4. Kehadiran (QR)</a>
+      <a href="#minit" class="nav-link"><i data-lucide="file-text" style="width:16px;"></i> 5. Penulisan Minit</a>
+      <a href="#kelulusan" class="nav-link"><i data-lucide="lock" style="width:16px;"></i> 6. Kelulusan & Kunci</a>
+      <a href="#cabutan" class="nav-link"><i data-lucide="check-square" style="width:16px;"></i> 7. Cabutan Minit</a>
+      <a href="#pemantauan" class="nav-link"><i data-lucide="trending-up" style="width:16px;"></i> 8. Tindakan & Reminder</a>
+      
+      <div class="nav-group-title">Sokongan</div>
+      <a href="#faq" class="nav-link"><i data-lucide="help-circle" style="width:16px;"></i> FAQ & Troubleshooting</a>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="manual-content">
+      
+      <!-- Section: Pengenalan -->
+      <section id="pengenalan" class="card">
+        <h2>Panduan Manual Pengguna</h2>
+        <p>
+          Selamat datang ke <strong>SmartGovMeeting PMTG</strong>. Sistem ini merupakan aplikasi pengurusan mesyuarat pintar yang direka khas untuk menyelaraskan kitaran hayat mesyuarat jawatankuasa kerja kerajaan Politeknik METrO Tasek Gelugor (PMTG), bermula daripada pendaftaran mesyuarat, penjanaan memo, pendaftaran kehadiran melalui kod QR, penulisan minit mesyuarat bersepadu mengikut unit, proses kelulusan bertingkat, sehinggalah kepada pemantauan komitmen tindakan (Cabutan Minit) dengan maklum balas dinamik.
+        </p>
+
+        <div class="info-alert">
+          <i data-lucide="shield-check"></i>
+          <strong>Mod Operasi:</strong> Anda boleh menukar peranan anda (seperti Setiausaha, Pengerusi, Penyemak, atau ICT) pada menu lungsur <em>"Mod Operasi"</em> di sebelah kiri sidebar untuk melihat butang kawalan khusus bagi setiap peranan yang berbeza.
+        </div>
+      </section>
+
+      <!-- Section: 1. Dashboard KPI -->
+      <section id="kpi" class="card">
+        <h3><i data-lucide="layout-dashboard"></i> 1. Dashboard & KPI Analisis</h3>
+        <p>
+          Dashboard utama memaparkan ringkasan petunjuk prestasi utama (KPI) bagi status tindakan yang diambil daripada minit mesyuarat yang telah disahkan.
+        </p>
+        <div class="mockup-container">
+          <img src="images/dashboard_mockup.jpg" class="mockup-image" alt="Dashboard Mockup">
+          <div class="mockup-caption">Rajah 1: Antaramuka Dashboard KPI memaparkan visual statistik status komitmen mesyuarat PMTG</div>
+        </div>
+        <h4>Ciri Utama:</h4>
+        <ul>
+          <li><strong>Statistik Segera:</strong> Kad petunjuk memaparkan jumlah mesyuarat, tindakan yang selesai, tindakan tertunggak (*overdue*), dan kadar pencapaian piagam pelanggan jawatankuasa.</li>
+          <li><strong>Graf Visual:</strong> Analisis pecahan status tugasan dipaparkan menggunakan carta Pai (*Pie Chart*) dan carta Bar dinamik yang dijana menggunakan Chart.js.</li>
+        </ul>
+      </section>
+
+      <!-- Section: 2. Daftar & Agenda -->
+      <section id="daftar" class="card">
+        <h3><i data-lucide="calendar"></i> 2. Pengurusan Mesyuarat & Penetapan Agenda</h3>
+        <p>
+          Urusetia boleh mendaftarkan mesyuarat baharu dan menetapkan senarai agenda utama berserta sub-agenda dengan mudah.
+        </p>
+        <h4>Panduan Langkah Demi Langkah:</h4>
+        <ol>
+          <li>Klik butang <strong>"Daftar Mesyuarat Baru"</strong>.</li>
+          <li>Isikan nama mesyuarat, bilangan, tahun, tarikh, masa, dan tempat mesyuarat diadakan.</li>
+          <li><strong>Pilihan Kategori:</strong> Pilih kategori mesyuarat daripada senarai dropdown. Jika mesyuarat tiada dalam senarai, pilih <strong>"Lain-lain"</strong> dan taipkan kategori tersuai anda.</li>
+          <li>Pilih **Pengerusi**, **Setiausaha**, dan tandakan **Urusetia** serta **Senarai Ahli Jawatankuasa** yang dipilih untuk hadir mesyuarat (keahlian *tick-select*).</li>
+          <li>Isi tajuk agenda mesyuarat dan masukkan sub-agenda jika perlu. Anda boleh menambah atau memadam sub-agenda secara langsung.</li>
+          <li>Klik <strong>"Simpan"</strong> untuk menyimpan draf mesyuarat ke dalam pangkalan data.</li>
+        </ol>
+      </section>
+
+      <!-- Section: 3. Memo Automatik -->
+      <section id="memo" class="card">
+        <h3><i data-lucide="mail"></i> 3. Penjanaan Memo Jemputan Automatik</h3>
+        <p>
+          Sistem menjana Memo Jemputan Rasmi Kerajaan secara automatik mengikut standard format Politeknik Malaysia.
+        </p>
+        <div class="mockup-container">
+          <img src="images/memo_actual.png" class="mockup-image" alt="Memo Sebenar">
+          <div class="mockup-caption">Rajah 2: Contoh sebenar Memo Dalaman Jawatankuasa PMTG yang dijana lengkap dengan logo dan kod QR kehadiran</div>
+        </div>
+        <h4>Panduan Langkah Demi Langkah:</h4>
+        <ol>
+          <li>Pilih mesyuarat yang dikehendaki pada dropdown di bahagian atas.</li>
+          <li><strong>Pilihan Tarikh Memo:</strong> Di sebelah kanan, anda boleh menukar pilihan tarikh memo sama ada mahu menggunakan **Tarikh Semasa (Hari Ini)** atau **Tarikh Mesyuarat**. Tarikh akan bertukar secara langsung.</li>
+          <li>Klik butang **"Cetak / Simpan PDF"** untuk mencetak terus ke pencetak fizikal atau menyimpannya sebagai fail PDF. Sistem akan menyembunyikan semua butang dan memformatkan fail ke saiz A4 yang bersih.</li>
+          <li>Butang **"Eksport Word"** disediakan jika urusetia mahu menyunting kandungan memo menggunakan perisian Microsoft Word.</li>
+        </ol>
+      </section>
+
+      <!-- Section: 4. Kehadiran (QR) -->
+      <section id="kehadiran" class="card">
+        <h3><i data-lucide="qr-code"></i> 4. Pendaftaran Kehadiran & QR Code</h3>
+        <p>
+          Pendaftaran kehadiran boleh diisi secara manual oleh urusetia atau discan secara langsung oleh ahli mesyuarat menggunakan telefon pintar mereka semasa mesyuarat bermula.
+        </p>
+        <div class="mockup-container">
+          <img src="images/qr_mockup.jpg" class="mockup-image" alt="QR Scan Mockup">
+          <div class="mockup-caption">Rajah 3: Ilustrasi pendaftaran kehadiran mesyuarat dengan mengimbas QR Code menggunakan telefon pintar</div>
+        </div>
+        <h4>Penyambungan QR Code & Rangkaian Rangka Awam (localtunnel):</h4>
+        <ul>
+          <li><strong>Imbasan Rangkaian Wi-Fi Tempatan:</strong> Sistem akan mengesan IP rangkaian fizikal PC anda secara automatik (contohnya: `http://10.141.3.73:8092`) untuk menjana QR Code. Pastikan telefon anda berada di Wi-Fi yang sama untuk melayari borang kehadiran.</li>
+          <li><strong>Akses Luar Talian (4G / 5G / Luar Wi-Fi):</strong> Sekiranya ahli mesyuarat mahu mengimbas QR menggunakan data mudah alih (4G/5G), buka terminal Command Prompt di PC anda dan jalankan perintah:
+            <pre style="background:#1e293b; color:#38edf2; padding:10px; border-radius:6px; margin: 8px 0; font-size:12px; font-family:monospace; overflow-x:auto;">npx localtunnel --port 8092</pre>
+            Tampalkan pautan HTTPS awam yang dihasilkan (cth: `https://slow-cats.localtunnel.me`) ke dalam panel **"Set URL Terowong"** di halaman kehadiran. QR Code akan dikemaskini secara langsung untuk boleh diakses dari mana-mana internet sahaja!
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section: 5. Penulisan Minit -->
+      <section id="minit" class="card">
+        <h3><i data-lucide="file-text"></i> 5. Penulisan Minit & Pecahan Laporan Unit</h3>
+        <p>
+          Urusetia boleh merekodkan perbincangan minit mesyuarat secara teratur.
+        </p>
+        <h4>Ciri Utama:</h4>
+        <ul>
+          <li><strong>Pecahan Laporan Unit Dinamik:</strong> Bagi agenda *Pembentangan Laporan Unit*, penulisan ulasan dan tugasan boleh dipecahkan mengikut unit masing-masing. Anda boleh menambah sub-unit baharu daripada 27 unit PMTG dan menulis maklum balas berasingan.</li>
+          <li><strong>Tugasan Tindakan Bersepadu:</strong> Di bawah setiap agenda (atau sub-unit), urusetia boleh menandakan komitmen tindakan, memilih pegawai bertanggungjawab daripada senarai 59 kakitangan PMTG, menetapkan tarikh akhir, dan tahap keutamaan tugasan.</li>
+        </ul>
+      </section>
+
+      <!-- Section: 6. Kelulusan & Kunci -->
+      <section id="kelulusan" class="card">
+        <h3><i data-lucide="lock"></i> 6. Kitaran Kelulusan & Tandatangan Digital</h3>
+        <p>
+          Proses kelulusan minit mesyuarat rasmi dilakukan menerusi 4 kitaran utama:
+        </p>
+        <div style="background:var(--bg-primary); padding:16px; border-radius:var(--radius); margin-bottom:16px; border: 1px solid var(--border-color);">
+          <div style="display:flex; justify-content:space-between; text-align:center; font-size:12px; font-weight:bold;">
+            <div style="color:var(--color-primary);"><i data-lucide="edit"></i><br>1. DRAF</div>
+            <div style="color:var(--color-warning);"><i data-lucide="arrow-right"></i><br>2. SELESAI</div>
+            <div style="color:var(--color-secondary);"><i data-lucide="arrow-right"></i><br>3. DISEMAK</div>
+            <div style="color:var(--color-success);"><i data-lucide="arrow-right"></i><br>4. DILULUSKAN</div>
+          </div>
+        </div>
+        <h4>Panduan Langkah Demi Langkah:</h4>
+        <ol>
+          <li><strong>Setiausaha (Draf -> Selesai):</strong> Selepas menulis minit, klik **"Hantar untuk Semakan"**. Ini akan mengunci minit daripada disunting oleh setiausaha dan menetapkan tarikh sedia.</li>
+          <li><strong>Penyemak (Selesai -> Disemak):</strong> Log masuk sebagai *Pn. Norhasaliza (Penyemak)*, semak kandungan minit dan klik **"Tanda Disemak"**. Tarikh semak dan nama penyemak akan direkodkan.</li>
+          <li><strong>Pengerusi (Disemak -> Diluluskan):</strong> Log masuk sebagai *En. Yusaini (Pengerusi)*, klik **"Lulus & Kunci Minit"**. Ini akan mengunci seluruh minit secara kekal dan menurunkan tandatangan digital pengerusi.</li>
+          <li><strong>Paparan Minit Rasmi A4:</strong> Sebaik sahaja diluluskan, minit boleh dicetak bersih. Semua elemen pengurusan, timeline, dan dropdown akan disembunyikan secara automatik semasa cetakan dibuat.</li>
+        </ol>
+        <div class="mockup-container">
+          <img src="images/minutes_mockup.jpg" class="mockup-image" alt="Minit Mockup">
+          <div class="mockup-caption">Rajah 4: Contoh format Minit Mesyuarat Rasmi Jawatankuasa PMTG yang dihasilkan lengkap dengan sub-nombor dinamik dan tandatangan digital</div>
+        </div>
+      </section>
+
+      <!-- Section: 7. Cabutan Minit -->
+      <section id="cabutan" class="card">
+        <h3><i data-lucide="check-square"></i> 7. Cabutan Minit & Maklum Balas Pegawai</h3>
+        <p>
+          Modul ini memaparkan Cabutan Minit yang diekstrak secara automatik bagi setiap tugasan komitmen pegawai yang terlibat.
+        </p>
+        <h4>Ciri Utama:</h4>
+        <ul>
+          <li><strong>Ruang Respon Maklum Balas:</strong> Kakitangan yang bertanggungjawab boleh menaip maklum balas maklumat terkini atau status tindakan mereka secara terus di dalam ruangan input textarea pada jadual dan mengklik butang **"Simpan"**.</li>
+          <li><strong>Format Bersih Cetakan:</strong> Ruangan input teks dan butang "Simpan" hanya kelihatan pada paparan pelayar web. Apabila dicetak ke PDF/kertas, ia akan digantikan secara automatik dengan teks bertulis yang bersih dan kemas untuk disahkan.</li>
+        </ul>
+      </section>
+
+      <!-- Section: 8. Tindakan & Reminder -->
+      <section id="pemantauan" class="card">
+        <h3><i data-lucide="trending-up"></i> 8. Pemantauan Tindakan & Reminder Portal</h3>
+        <p>
+          Urusetia boleh memantau baki komitmen tindakan kakitangan dan menghantar peringatan notifikasi terus kepada mereka.
+        </p>
+        <h4>Ciri Peringatan (Real-World Redirection):</h4>
+        <ul>
+          <li><strong>WhatsApp Peringatan:</strong> Memilih saluran WhatsApp akan melancarkan WhatsApp Web/Desktop dengan mesej peringatan mesyuarat berserta pautan kehadiran yang telah diisi secara automatik untuk dihantar kepada pegawai bertugas.</li>
+          <li><strong>Emel Rasmi PMTG:</strong> Memilih saluran Emel akan membuka aplikasi emel lalai anda (seperti Outlook/Gmail) dengan alamat e-mel rasmi pegawai, tajuk peringatan, dan mesej lengkap diisi secara automatik.</li>
+        </ul>
+      </section>
+
+      <!-- Section: FAQ -->
+      <section id="faq" class="card">
+        <h3><i data-lucide="help-circle"></i> Soalan Lazim & Penyelesaian Masalah (FAQ)</h3>
+        <h4>S: Mengapakah QR Code yang diimbas pada telefon tidak mahu terbuka?</h4>
+        <p>
+          <strong>J:</strong> Ini adalah disebabkan oleh isu routing rangkaian. Sila pastikan:
+          1. Telefon pintar anda disambungkan ke Wi-Fi yang sama dengan PC anda.
+          2. Jika anda menggunakan data mudah alih (4G/5G) atau Wi-Fi yang berbeza, anda mesti menggunakan pautan terowong luar talian (rujuk modul 4).
+        </p>
+        <h4>S: Bagaimanakah cara untuk mencetak minit tanpa tajuk web "8/4/26, 8:19 AM..." di bahagian atas?</h4>
+        <p>
+          <strong>J:</strong> Semasa dialog cetakan pelayar web dibuka, nyah-tandakan pilihan **"Headers and Footers"** (Pengepala dan Kaki Halaman) di bawah tetapan cetakan pelayar (More settings).
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="manual-footer">
+        <p>SmartGovMeeting PMTG &copy; 2026. Hak Cipta Terpelihara Jawatankuasa Kerja ICT Politeknik METrO Tasek Gelugor.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    // Smooth scrolling active state switcher
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= (sectionTop - 120)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    if (window.lucide) window.lucide.createIcons();
+  </script>
+</body>
+</html>
