@@ -756,6 +756,84 @@ const DashboardModule = {
   }
 };
 
+// Chart rendering helpers
+let unitChartInstance = null;
+let statusChartInstance = null;
+
+function renderUnitChart(data) {
+  const ctx = document.getElementById('unitChart');
+  if (!ctx) return;
+  
+  if (unitChartInstance) {
+    unitChartInstance.destroy();
+  }
+  
+  const labels = Object.keys(data);
+  const values = Object.values(data);
+  
+  unitChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Bilangan Tindakan',
+        data: values,
+        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+        borderColor: 'rgba(59, 130, 246, 1)',
+        borderWidth: 1,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { stepSize: 1 }
+        }
+      }
+    }
+  });
+}
+
+function renderStatusChart(done, pending, overdue) {
+  const ctx = document.getElementById('statusChart');
+  if (!ctx) return;
+  
+  if (statusChartInstance) {
+    statusChartInstance.destroy();
+  }
+  
+  statusChartInstance = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Selesai', 'Dalam Tindakan', 'Tamat Tempoh'],
+      datasets: [{
+        data: [done, pending, overdue],
+        backgroundColor: [
+          '#10b981', // Emerald Green
+          '#f59e0b', // Amber Yellow
+          '#ef4444'  // Rose Red
+        ],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: { boxWidth: 12, font: { family: 'Outfit' } }
+        }
+      }
+    }
+  });
+}
 
 // ==========================================================================
 // MODUL 2 & 6: Pengurusan Mesyuarat & Agenda
