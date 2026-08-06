@@ -3,6 +3,7 @@
 // ==========================================================================
 
 // Global Application State Cache
+// Global Application State Cache
 window.smartGovState = {
   members: [],
   meetings: [],
@@ -10,13 +11,223 @@ window.smartGovState = {
   repository: [],
   auditLogs: [],
   currentOperator: 'Pn. Mashitah binti Osman',
-  theme: 'light'
+  theme: 'light',
+  isDemoMode: false
 };
 
 // API Base URL - Intelligent Fallback for Local File Access
 const API_URL = (window.location.origin && window.location.origin.startsWith('http')) 
   ? `${window.location.origin}/api` 
   : 'http://localhost:8092/api';
+
+// ==========================================================================
+// INTERCEPTOR: Mod Demo Atas Talian (GitHub Pages)
+// ==========================================================================
+const isGitHubPages = window.location.hostname.includes('github.io') || window.location.hostname === '';
+
+if (isGitHubPages) {
+  window.smartGovState.isDemoMode = true;
+  
+  // Set default static mock data immediately
+  window.smartGovState.members = [
+    { id: "m1", nama: "En. Mohd Yusaini bin Mohamed Ali", jawatan: "Pengarah / Pengerusi", unit: "Pengurusan Tertinggi", email: "yusaini@pmtg.edu.my", telefon: "019-1234567", kategori: "Tetap", peranan: "Pengerusi" },
+    { id: "m2", nama: "Pn. Norhasaliza binti Hassan", jawatan: "Ketua Jabatan Sokongan Akademik / KJSA", unit: "Jabatan Sokongan Akademik", email: "norhasaliza@pmtg.edu.my", telefon: "013-9876543", kategori: "Tetap", peranan: "Ahli" },
+    { id: "m3", nama: "Mohd Azrulnizam bin Mohd Kamarudin", jawatan: "Pegawai Teknologi Maklumat / Pembangun Sistem", unit: "Unit ICT", email: "azrulnizam@pmtg.edu.my", telefon: "012-3456789", kategori: "Tetap", peranan: "Ahli" },
+    { id: "m4", nama: "Pn. Mashitah binti Osman", jawatan: "Setiausaha / Pegawai Pentadbiran", unit: "Unit Khidmat Pengurusan", email: "mashitah@pmtg.edu.my", telefon: "017-5554433", kategori: "Tetap", peranan: "Setiausaha" }
+  ];
+  
+  window.smartGovState.meetings = [
+    {
+      id: "meet-1",
+      nama: "Mesyuarat Jawatankuasa Pengurusan PMTG",
+      bilangan: "1",
+      tahun: "2026",
+      tarikh: "2026-08-04",
+      masa: "08:30 Pagi",
+      tempat: "Bilik Persidangan, PMTG",
+      pengerusiId: "m1",
+      setiausahaId: "m4",
+      urusetiaIds: ["m3"],
+      ahliIds: ["m1", "m2", "m3", "m4"],
+      status: "Diluluskan",
+      kehadiran: { "m1": "Hadir", "m2": "Hadir", "m3": "Hadir", "m4": "Hadir" },
+      agenda: [
+        { id: "a1", tajuk: "Kata-Kata Aluan Pengerusi", subAgendas: ["Pengerusi mengucapkan terima kasih atas komitmen ahli jawatankuasa."] },
+        { id: "a2", tajuk: "Pengesahan Minit Mesyuarat yang Lalu", subAgendas: ["Minit mesyuarat bertarikh 28 Mei 2026 disahkan tanpa pindaan."] },
+        { id: "a3", tajuk: "Pembentangan SmartGovMeeting PMTG", subAgendas: ["Pembangun sistem membentangkan pelan integrasi pangkalan data ahli secara kelompok."] }
+      ],
+      updatedAt: new Date().toISOString()
+    }
+  ];
+
+  window.smartGovState.actions = [
+    { id: "act-1", meetingId: "meet-1", meetingNama: "Mesyuarat Jawatankuasa Pengurusan PMTG", keputusan: "Menyediakan manual penggunaan sistem dan kertas kerja inovasi lengkap.", pegawaiId: "m3", pegawaiNama: "Mohd Azrulnizam bin Mohd Kamarudin", tarikhSiap: "2026-08-15", status: "Selesai", catatan: "Telah disiapkan dan dimuat naik ke GitHub." }
+  ];
+
+  window.smartGovState.repository = [
+    { id: "rep-1", title: "Manual Penggunaan SmartGovMeeting", size: "1.2 MB", uploadDate: "2026-08-04", url: "manual.html" },
+    { id: "rep-2", title: "Kertas Kerja Inovasi", size: "850 KB", uploadDate: "2026-08-04", url: "inovasi.html" }
+  ];
+
+  window.smartGovState.auditLogs = [
+    { id: "log-1", timestamp: new Date().toISOString(), operator: "Mohd Azrulnizam", ip: "127.0.0.1", action: "Sistem Dimulakan", details: "Portal dijalankan dalam Mod Demo atas talian di GitHub Pages." }
+  ];
+
+  // Hijack fetch requests to perform virtual client-side CRUD
+  const originalFetch = window.fetch;
+  window.fetch = async function (url, options) {
+    const urlStr = String(url);
+    if (urlStr.includes('/api/') || urlStr.includes('/api')) {
+      const method = (options && options.method) ? options.method.toUpperCase() : 'GET';
+      const body = (options && options.body) ? JSON.parse(options.body) : null;
+      let responseData = { success: true };
+      let status = 200;
+      const db = window.smartGovState;
+
+      if (urlStr.includes('/api/init') || urlStr.includes('/api/data')) {
+        responseData = {
+          members: db.members,
+          meetings: db.meetings,
+          actions: db.actions,
+          repository: db.repository,
+          auditLogs: db.auditLogs,
+          localIP: 'localhost'
+        };
+      } 
+      else if (urlStr.includes('/api/members/batch')) {
+        const imported = [];
+        if (body && Array.isArray(body.members)) {
+          body.members.forEach((m, idx) => {
+            const member = {
+              id: 'm' + (db.members.length + idx + 1) + '-' + Math.random().toString(36).substr(2, 4),
+              nama: m.nama || 'Nama Pegawai',
+              jawatan: m.jawatan || 'Pegawai',
+              unit: m.unit || 'Unit',
+              email: m.email || '',
+              telefon: m.telefon || '',
+              kategori: m.kategori || 'Tetap',
+              peranan: m.peranan || 'Ahli',
+              createdAt: new Date().toISOString()
+            };
+            db.members.push(member);
+            imported.push(member);
+          });
+        }
+        responseData = { success: true, count: imported.length };
+        status = 201;
+      }
+      else if (urlStr.includes('/api/members')) {
+        if (method === 'POST') {
+          const member = {
+            id: 'm' + (db.members.length + 1) + '-' + Math.random().toString(36).substr(2, 4),
+            nama: body.nama,
+            jawatan: body.jawatan,
+            unit: body.unit,
+            email: body.email,
+            telefon: body.telefon,
+            kategori: body.kategori,
+            peranan: body.peranan,
+            createdAt: new Date().toISOString()
+          };
+          db.members.push(member);
+          responseData = { success: true, member };
+          status = 201;
+        } else if (method === 'PUT') {
+          const idx = db.members.findIndex(m => m.id === body.id);
+          if (idx !== -1) {
+            db.members[idx] = { ...db.members[idx], ...body, updatedAt: new Date().toISOString() };
+            responseData = { success: true, member: db.members[idx] };
+          } else {
+            status = 404;
+          }
+        }
+      } 
+      else if (urlStr.includes('/api/meetings')) {
+        if (method === 'POST') {
+          const meeting = {
+            id: 'meet-' + Date.now() + '-' + Math.random().toString(36).substr(2, 4),
+            ...body,
+            createdAt: new Date().toISOString()
+          };
+          db.meetings.push(meeting);
+          responseData = { success: true, meeting };
+          status = 201;
+        } else if (method === 'PUT') {
+          const idx = db.meetings.findIndex(m => m.id === body.id);
+          if (idx !== -1) {
+            db.meetings[idx] = { ...db.meetings[idx], ...body, updatedAt: new Date().toISOString() };
+            if (body.agenda) {
+              const activeActionIds = [];
+              body.agenda.forEach(ag => {
+                if (ag.tindakan) {
+                  ag.tindakan.forEach(act => {
+                    activeActionIds.push(act.id);
+                    const aIdx = db.actions.findIndex(a => a.id === act.id);
+                    const actObj = {
+                      id: act.id,
+                      meetingId: body.id,
+                      meetingNama: body.nama,
+                      keputusan: act.keputusan,
+                      pegawaiId: act.pegawaiId,
+                      pegawaiNama: act.pegawaiNama,
+                      tarikhSiap: act.tarikhSiap || new Date().toISOString().split('T')[0],
+                      status: act.status || 'Belum Mula',
+                      catatan: act.catatan || ''
+                    };
+                    if (aIdx === -1) {
+                      db.actions.push(actObj);
+                    } else {
+                      db.actions[aIdx] = { ...db.actions[aIdx], ...actObj };
+                    }
+                  });
+                }
+              });
+              db.actions = db.actions.filter(a => a.meetingId !== body.id || activeActionIds.includes(a.id));
+            }
+            responseData = { success: true, meeting: db.meetings[idx] };
+          } else {
+            status = 404;
+          }
+        }
+      }
+      else if (urlStr.includes('/api/actions')) {
+        if (method === 'PUT') {
+          const idx = db.actions.findIndex(a => a.id === body.id);
+          if (idx !== -1) {
+            db.actions[idx] = { ...db.actions[idx], ...body };
+            responseData = { success: true, action: db.actions[idx] };
+          } else {
+            status = 404;
+          }
+        }
+      }
+      else if (urlStr.includes('/api/repository')) {
+        if (method === 'POST') {
+          const file = {
+            id: 'file-' + Date.now(),
+            title: body.title,
+            size: body.size,
+            uploadDate: new Date().toISOString().split('T')[0],
+            url: body.url
+          };
+          db.repository.push(file);
+          responseData = { success: true, file };
+          status = 201;
+        } else if (method === 'DELETE') {
+          db.repository = db.repository.filter(f => f.id !== body.id);
+          responseData = { success: true };
+        }
+      }
+
+      return {
+        ok: status >= 200 && status < 300,
+        status: status,
+        json: async () => responseData
+      };
+    }
+    return originalFetch(url, options);
+  };
+}
 
 const PMTG_UNITS = [
   "Jabatan Akademik",
@@ -163,9 +374,72 @@ async function refreshState() {
     window.smartGovState.localIP = data.localIP || 'localhost';
     return true;
   } catch (err) {
-    console.error('Error fetching system state:', err);
-    showToast('Gagal menyambung ke pelayan API. Pastikan pelayan dihidupkan.', 'danger');
-    return false;
+    console.warn('Error fetching system state, entering Demo Mode:', err);
+    
+    // Silence connection warning and trigger Demo Mode fallback
+    window.smartGovState.isDemoMode = true;
+    window.smartGovState.localIP = 'localhost';
+    
+    if (window.smartGovState.members.length === 0) {
+      window.smartGovState.members = [
+        { id: "m1", nama: "En. Mohd Yusaini bin Mohamed Ali", jawatan: "Pengarah / Pengerusi", unit: "Pengurusan Tertinggi", email: "yusaini@pmtg.edu.my", telefon: "019-1234567", kategori: "Tetap", peranan: "Pengerusi" },
+        { id: "m2", nama: "Pn. Norhasaliza binti Hassan", jawatan: "Ketua Jabatan Sokongan Akademik / KJSA", unit: "Jabatan Sokongan Akademik", email: "norhasaliza@pmtg.edu.my", telefon: "013-9876543", kategori: "Tetap", peranan: "Ahli" },
+        { id: "m3", nama: "Mohd Azrulnizam bin Mohd Kamarudin", jawatan: "Pegawai Teknologi Maklumat / Pembangun Sistem", unit: "Unit ICT", email: "azrulnizam@pmtg.edu.my", telefon: "012-3456789", kategori: "Tetap", peranan: "Ahli" },
+        { id: "m4", nama: "Pn. Mashitah binti Osman", jawatan: "Setiausaha / Pegawai Pentadbiran", unit: "Unit Khidmat Pengurusan", email: "mashitah@pmtg.edu.my", telefon: "017-5554433", kategori: "Tetap", peranan: "Setiausaha" }
+      ];
+      
+      window.smartGovState.meetings = [
+        {
+          id: "meet-1",
+          nama: "Mesyuarat Jawatankuasa Pengurusan PMTG",
+          bilangan: "1",
+          tahun: "2026",
+          tarikh: "2026-08-04",
+          masa: "08:30 Pagi",
+          tempat: "Bilik Persidangan, PMTG",
+          pengerusiId: "m1",
+          setiausahaId: "m4",
+          urusetiaIds: ["m3"],
+          ahliIds: ["m1", "m2", "m3", "m4"],
+          status: "Diluluskan",
+          kehadiran: { "m1": "Hadir", "m2": "Hadir", "m3": "Hadir", "m4": "Hadir" },
+          agenda: [
+            { id: "a1", tajuk: "Kata-Kata Aluan Pengerusi", subAgendas: ["Pengerusi mengucapkan terima kasih atas komitmen ahli jawatankuasa."] },
+            { id: "a2", tajuk: "Pengesahan Minit Mesyuarat yang Lalu", subAgendas: ["Minit mesyuarat bertarikh 28 Mei 2026 disahkan tanpa pindaan."] },
+            { id: "a3", tajuk: "Pembentangan SmartGovMeeting PMTG", subAgendas: ["Pembangun sistem membentangkan pelan integrasi pangkalan data ahli secara kelompok."] }
+          ],
+          updatedAt: new Date().toISOString()
+        }
+      ];
+
+      window.smartGovState.actions = [
+        { id: "act-1", meetingId: "meet-1", meetingNama: "Mesyuarat Jawatankuasa Pengurusan PMTG", keputusan: "Menyediakan manual penggunaan sistem dan kertas kerja inovasi lengkap.", pegawaiId: "m3", pegawaiNama: "Mohd Azrulnizam bin Mohd Kamarudin", tarikhSiap: "2026-08-15", status: "Selesai", catatan: "Telah disiapkan dan dimuat naik ke GitHub." }
+      ];
+
+      window.smartGovState.repository = [
+        { id: "rep-1", title: "Manual Penggunaan SmartGovMeeting", size: "1.2 MB", uploadDate: "2026-08-04", url: "manual.html" },
+        { id: "rep-2", title: "Kertas Kerja Inovasi", size: "850 KB", uploadDate: "2026-08-04", url: "inovasi.html" }
+      ];
+
+      window.smartGovState.auditLogs = [
+        { id: "log-1", timestamp: new Date().toISOString(), operator: "Mohd Azrulnizam", ip: "127.0.0.1", action: "Sistem Dimulakan", details: "Portal dijalankan dalam Mod Demo atas talian di GitHub Pages." }
+      ];
+    }
+    
+    // Add Demo badge in header
+    setTimeout(() => {
+      const titleSec = document.querySelector('.header-title-container');
+      if (titleSec && !document.getElementById('demoBanner')) {
+        const banner = document.createElement('span');
+        banner.id = 'demoBanner';
+        banner.style = 'background-color:#d97706; color:white; font-size:10px; font-weight:bold; padding:2px 8px; border-radius:4px; margin-left:10px; vertical-align:middle; text-transform:uppercase;';
+        banner.textContent = 'Mod Demo / Statik';
+        titleSec.appendChild(banner);
+      }
+    }, 200);
+
+    showToast('Berjalan dalam Mod Demo (Luar Talian). Sebarang perubahan data hanya disimpan sementara di dalam memori pelayar web.', 'warning');
+    return true;
   }
 }
 window.refreshState = refreshState;
