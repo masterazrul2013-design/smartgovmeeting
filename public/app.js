@@ -3626,6 +3626,7 @@ const TRANSLATIONS = {
   "Audit Trail": "Audit Trail",
   "Manual Penggunaan": "User Manual",
   "Laporan Inovasi": "Innovation Report",
+  "Laporan Produk Inovasi": "Product Innovation Report",
   "Abstrak Sistem": "System Abstract",
   
   // Operator Mode Widget
