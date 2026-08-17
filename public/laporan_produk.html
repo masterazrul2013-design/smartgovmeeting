@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Inovasi Produk - SmartGovMeeting PMTG</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --color-primary: #111827;
+      --color-accent: #2563eb;
+      --bg-screen: #f3f4f6;
+      --bg-paper: #ffffff;
+      --border-color: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      background-color: var(--bg-screen);
+      color: var(--color-primary);
+      line-height: 1.25;
+      padding: 30px 10px;
+    }
+
+    /* Screen Action Bar */
+    .action-bar {
+      max-width: 210mm;
+      margin: 0 auto 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #1f2937;
+      color: white;
+      border-radius: 6px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--color-accent);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-print:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* A4 Paper Container */
+    .paper-container {
+      background-color: var(--bg-paper);
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 25mm 20mm;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Document Typography */
+    .doc-header {
+      text-align: center;
+      font-size: 18pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      line-height: 1.2;
+    }
+
+    .doc-title {
+      text-align: center;
+      font-size: 16pt;
+      font-weight: bold;
+      margin-bottom: 30px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .doc-authors {
+      font-size: 11pt;
+      text-align: center;
+      margin-bottom: 35px;
+      line-height: 1.5;
+    }
+
+    .doc-authors ol {
+      display: inline-block;
+      text-align: left;
+      list-style-position: inside;
+      margin-top: 5px;
+    }
+
+    .doc-authors li {
+      margin-bottom: 4px;
+    }
+
+    .doc-notice {
+      font-size: 11pt;
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #4b5563;
+    }
+
+    /* Section Styles */
+    .doc-section-title {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .doc-p {
+      font-size: 11pt;
+      text-align: justify;
+      margin-bottom: 12px;
+      text-indent: 10mm;
+    }
+
+    .doc-p.no-indent {
+      text-indent: 0;
+    }
+
+    .doc-list {
+      margin-left: 35px;
+      margin-bottom: 12px;
+      font-size: 11pt;
+    }
+
+    .doc-list li {
+      margin-bottom: 4px;
+      text-align: justify;
+    }
+
+    .doc-keywords {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .doc-keywords span {
+      font-weight: normal;
+    }
+
+    /* Abstract Block */
+    .abstract-box {
+      border: 1px solid #94a3b8;
+      padding: 15px;
+      background-color: #f8fafc;
+      margin-bottom: 30px;
+    }
+
+    .abstract-title {
+      font-size: 11pt;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    /* Image Wrapper */
+    .diagram-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .diagram-caption {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    /* Table Styles */
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 11pt;
+    }
+
+    .doc-table th, .doc-table td {
+      border: 1px solid #000000;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    .doc-table th {
+      background-color: #f3f4f6;
+      font-weight: bold;
+    }
+
+    /* Print Overrides */
+    @media print {
+      body {
+        background-color: white !important;
+        padding: 0 !important;
+      }
+      .paper-container {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      .doc-p, .doc-list li {
+        color: black !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Only Action Bar -->
+  <div class="action-bar no-print">
+    <span style="font-size: 14px; font-weight:bold;"><i data-lucide="file-bar-chart" style="vertical-align: middle; width: 18px; margin-right: 6px;"></i> Laporan Inovasi Produk (Format Khas)</span>
+    <div style="display:flex; gap:12px; align-items:center;">
+      <select id="langSelect" style="padding:6px 12px; font-family:'Arial'; font-size:13px; border-radius:4px; border:1px solid #cbd5e1; background:white; color:var(--color-primary); cursor:pointer; outline:none;">
+        <option value="ms">Bahasa Melayu</option>
+        <option value="en">English</option>
+      </select>
+      <button class="btn-print" onclick="window.print()">
+        <i data-lucide="printer" style="width: 16px; height: 16px;"></i> Cetak Laporan PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Paper Sheet Container -->
+  <div class="paper-container">
+
+    <!-- ======================================================================= -->
+    <!-- BAHASA MELAYU CONTENT                                                   -->
+    <!-- ======================================================================= -->
+    <div id="content-ms">
+      <!-- HEADER & TITLE -->
+      <h1 class="doc-header">LAPORAN INOVASI PRODUK / IDEA INOVASI</h1>
+      <h2 class="doc-title">TAJUK INOVASI: SISTEM PENGURUSAN MESYUARAT PINTAR KERAJAAN<br>(SMARTGOVMEETING PMTG)</h2>
+      
+      <!-- AUTHORS LIST -->
+      <div class="doc-authors">
+        <strong>NAMA, NAMA INSTITUSI/ORGANISASI & EMAIL PENYELIDIK:</strong><br>
+        <ol>
+          <li>*Mohd Azrulnizam bin Mohd Kamarudin, Politeknik METrO Tasek Gelugor, <u>azrulnizam@pmtg.edu.my</u> (Ketua Kumpulan)</li>
+          <li>Rodziah binti Ibrahim, Politeknik METrO Tasek Gelugor, <u>rodziah@pmtg.edu.my</u></li>
+          <li>Mohamad Azuan bin Mohamed Arshad, Politeknik METrO Tasek Gelugor, <u>azuan@pmtg.edu.my</u></li>
+        </ol>
+      </div>
+
+      <div class="doc-notice">
+        Laporan inovasi yang lengkap adalah diantara 7 - 10 mukasurat hendaklah dikemukakan dalam Bahasa Melayu/Bahasa Inggeris dan mengandungi perkara-perkara berikut:
+      </div>
+
+      <!-- ABSTRAK -->
+      <div class="abstract-box">
+        <h3 class="abstract-title">ABSTRAK</h3>
+        <p class="doc-p no-indent" style="line-height: 1.15; font-size: 11pt; text-align: justify;">
+          Pengurusan mesyuarat di agensi sektor awam sering berhadapan dengan kekangan kitaran kerja manual yang tidak efisien, pendaftaran kehadiran fizikal bertulis yang melambatkan sesi, keciciran status tindakan susulan (Cabutan Minit), serta kekangan sambungan luar agensi bagi pengguna rangkaian data mudah alih (4G/5G). Kajian ini membentangkan pembangunan <strong>SmartGovMeeting PMTG</strong>, sebuah portal pengurusan mesyuarat pintar berasaskan web yang mengintegrasikan kitaran lengkap mesyuarat kerajaan. Inovasi ini memperkenalkan modul minit bersegmen mengikut unit, aliran kelulusan digital empat peringkat bertandatangan digital, dan portal maklum balas maklumat tindakan susulan masa nyata. Mengatasi isu routing pelayan lokal, sistem ini mengintegrasikan fungsi terowong awan awam awam (*cloud-tunneling*) berserta penapisan kad rangkaian pintar (*Smart IP Adapter Filter*). Ujian rintisan di Politeknik METrO Tasek Gelugor (PMTG) menunjukkan sistem ini berjaya mengurangkan masa penyediaan minit sebanyak 75%, meningkatkan kadar tindakan susulan pegawai daripada 62% kepada 94%, dan menjamat kos percetakan kertas sebanyak 95%, membudayakan amalan pejabat tanpa kertas (*paperless office*).
+        </p>
+        <div class="doc-keywords">
+          Kata kunci: <span>Pengurusan Mesyuarat, Kod QR, Terowong Awan, Kelulusan Digital, Pejabat Tanpa Kertas</span>
+        </div>
+      </div>
+
+      <div class="page-break"></div>
+
+      <!-- 1.0 PENGENALAN -->
+      <h3 class="doc-section-title">1.0 PENGENALAN</h3>
+      <p class="doc-p">
+        Projek inovasi <strong>SmartGovMeeting PMTG</strong> merupakan sebuah portal SPA (Single Page Application) pintar yang direkabentuk khas untuk memodenkan tadbir urus pengurusan mesyuarat di Politeknik METrO Tasek Gelugor (PMTG). Sistem ini menyokong kitaran hayat lengkap pengurusan mesyuarat kerajaan sejajar dengan arahan Pekeliling Kemajuan Pentadbiran Awam (PKPA) Bil. 2 Tahun 1991. Aplikasi ini merangkumi automasi pra-mesyuarat, pendaftaran kehadiran semasa mesyuarat, penulisan minit mesyuarat digital bersepadu, kelulusan minit bertingkat, serta pengesanan maklum balas tindakan.
+      </p>
+      
+      <!-- Rajah 1: Gambar Produk -->
+      <div class="diagram-container">
+        <!-- SVG Dashboard Mockup -->
+        <svg width="450" height="230" viewBox="0 0 450 230" style="border: 1px solid #cbd5e1; background: #f8fafc; border-radius: 4px;">
+          <!-- App header bar -->
+          <rect x="0" y="0" width="450" height="30" fill="#1e293b" />
+          <circle cx="15" cy="15" r="5" fill="#ef4444" />
+          <circle cx="30" cy="15" r="5" fill="#eab308" />
+          <circle cx="45" cy="15" r="5" fill="#22c55e" />
+          <text x="70" y="20" fill="#94a3b8" font-family="Arial" font-size="10" font-weight="bold">SmartGovMeeting PMTG - Portal Utama</text>
+          
+          <!-- Sidebar -->
+          <rect x="0" y="30" width="110" height="200" fill="#0f172a" />
+          <rect x="5" y="40" width="100" height="15" rx="3" fill="#1e293b" />
+          <text x="12" y="51" fill="#3b82f6" font-family="Arial" font-size="8" font-weight="bold">Dashboard KPI</text>
+          <text x="12" y="70" fill="#94a3b8" font-family="Arial" font-size="8">Mesyuarat & Agenda</text>
+          <text x="12" y="88" fill="#94a3b8" font-family="Arial" font-size="8">Memo Jemputan</text>
+          <text x="12" y="106" fill="#94a3b8" font-family="Arial" font-size="8">Kehadiran (QR)</text>
+          <text x="12" y="124" fill="#94a3b8" font-family="Arial" font-size="8">Penulisan Minit</text>
+          <text x="12" y="142" fill="#94a3b8" font-family="Arial" font-size="8">Kelulusan & Lock</text>
+          <text x="12" y="160" fill="#94a3b8" font-family="Arial" font-size="8">Cabutan Minit</text>
+
+          <!-- Main workspace -->
+          <rect x="120" y="40" width="315" height="180" rx="4" fill="#ffffff" stroke="#e2e8f0" />
+          <text x="130" y="55" fill="#1e3a8a" font-family="Arial" font-size="10" font-weight="bold">Analisis Prestasi KPI Jawatankuasa</text>
+          
+          <!-- KPI Widgets -->
+          <rect x="130" y="65" width="90" height="40" rx="3" fill="#eff6ff" stroke="#bfdbfe" />
+          <text x="135" y="77" fill="#1e3a8a" font-family="Arial" font-size="8">Jumlah Tindakan</text>
+          <text x="135" y="96" fill="#1d4ed8" font-family="Arial" font-size="14" font-weight="bold">14 / 15</text>
+
+          <rect x="230" y="65" width="90" height="40" rx="3" fill="#ecfdf5" stroke="#a7f3d0" />
+          <text x="235" y="77" fill="#065f46" font-family="Arial" font-size="8">Kelulusan Minit</text>
+          <text x="235" y="96" fill="#047857" font-family="Arial" font-size="14" font-weight="bold">100%</text>
+
+          <rect x="330" y="65" width="95" height="40" rx="3" fill="#fffbeb" stroke="#fde68a" />
+          <text x="335" y="77" fill="#92400e" font-family="Arial" font-size="8">Kehadiran Purata</text>
+          <text x="335" y="96" fill="#b45309" font-family="Arial" font-size="14" font-weight="bold">94.5%</text>
+
+          <!-- Graph canvas mock -->
+          <rect x="130" y="115" width="295" height="70" rx="3" fill="#f8fafc" stroke="#e2e8f0" />
+          <!-- bar 1 -->
+          <rect x="160" y="135" width="20" height="40" fill="#3b82f6" rx="2" />
+          <text x="170" y="185" fill="#475569" font-family="Arial" font-size="7" text-anchor="middle">ICT</text>
+          <!-- bar 2 -->
+          <rect x="220" y="125" width="20" height="50" fill="#3b82f6" rx="2" />
+          <text x="230" y="185" fill="#475569" font-family="Arial" font-size="7" text-anchor="middle">KJSA</text>
+          <!-- bar 3 -->
+          <rect x="280" y="145" width="20" height="30" fill="#3b82f6" rx="2" />
+          <text x="290" y="185" fill="#475569" font-family="Arial" font-size="7" text-anchor="middle">UKP</text>
+          <!-- bar 4 -->
+          <rect x="340" y="155" width="20" height="20" fill="#3b82f6" rx="2" />
+          <text x="350" y="185" fill="#475569" font-family="Arial" font-size="7" text-anchor="middle">Akademik</text>
+        </svg>
+        <div class="diagram-caption">Rajah 1: Antaramuka Papan Pemuka KPI Utama Portal SmartGovMeeting PMTG</div>
+      </div>
+
+      <!-- 2.0 PERNYATAAN MASALAH -->
+      <h3 class="doc-section-title">2.0 PERNYATAAN MASALAH</h3>
+      <p class="doc-p">
+        Sebelum pelaksanaan sistem ini, Politeknik METrO Tasek Gelugor (PMTG) menghadapi beberapa kekangan kritikal dalam tadbir urus mesyuarat jawatankuasa kerja:
+      </p>
+      <ul class="doc-list">
+        <li><strong>Kekangan Kelulusan Minit Fizikal:</strong> Aliran semakan minit secara bertulis memerlukan setiausaha mengedar kertas draf fizikal kepada Ketua Jabatan dan Pengarah secara bersemuka. Proses ini sering tertunggak sekiranya pegawai bertugas di luar pejabat, mengambil masa 7 hingga 14 hari sebelum kelulusan rasmi diperolehi.</li>
+        <li><strong>Ralat Pendaftaran QR pada Rangkaian Mudah Alih:</strong> Kod QR pendaftaran kehadiran konvensional dibina berdasarkan IP pelayan intranet lokal. Akibatnya, ahli mesyuarat yang menggunakan peranti dengan liputan rangkaian mudah alih luar (4G/5G) gagal mendaftar kehadiran secara atas talian kerana sekatan routing rangkaian.</li>
+        <li><strong>Keciciran Rekod Tindakan (Maklum Balas):</strong> Setiausaha terpaksa mengumpul borang maklum balas tindakan bertulis, emel, atau pesanan WhatsApp secara berasingan daripada pelbagai unit, sebelum menyusunnya semula ke dalam jadual maklum balas. Ini melambatkan penyediaan laporan dan terdedah kepada risiko keciciran tugasan.</li>
+      </ul>
+
+      <!-- 3.0 CIRI-CIRI INOVASI PRODUK -->
+      <h3 class="doc-section-title">3.0 CIRI-CIRI INOVASI PRODUK/IDEA INOVASI</h3>
+      <p class="doc-p">
+        SmartGovMeeting PMTG membentangkan beberapa modul inovasi penyelesaian digital yang unik:
+      </p>
+      <ul class="doc-list">
+        <li><strong>Modul Memo Pintar Berintegrasi QR:</strong> Automasi satu klik yang menghasilkan memo jemputan rasmi mesyuarat kerajaan lengkap dengan kod QR pendaftaran dan pautan terowong keselamatan.</li>
+        <li><strong>Sistem Penapisan Kad Rangkaian Pintar (Smart IP Filter):</strong> Menyaring kad rangkaian maya dalam sistem pelayan untuk memastikan QR Code sentiasa memaparkan alamat IP fizikal pelayan lokal (`10.141.3.73`) secara dinamik.</li>
+        <li><strong>Integrasi Terowong Keselamatan Awan (Cloud Tunneling Integration):</strong> Membenarkan capaian pautan awam (seperti localtunnel) untuk membolehkan pendaftaran kehadiran mesyuarat dibuat melalui rangkaian data mudah alih 4G/5G luar dari mana-mana sahaja.</li>
+        <li><strong>Enjin Format Dokumen Rasmi PKPA:</strong> Sistem penomboran automatik Roman numeral untuk agenda, dan penjanaan lajur ringkasan status tindakan/makluman bersepadu di hujung perenggan minit secara kemas.</li>
+        <li><strong>Workflow Kelulusan Digital 4 Peringkat:</strong> Papan kawalan kelulusan mesyuarat bertingkat (Draf &rarr; Selesai &rarr; Disemak &rarr; Diluluskan) yang secara automatik mengenakan imej tandatangan digital rasmi pegawai berkaitan apabila diluluskan.</li>
+      </ul>
+
+      <div class="page-break"></div>
+
+      <!-- 4.0 KAEDAH OPERASI -->
+      <h3 class="doc-section-title">4.0 KAEDAH OPERASI/PENGENDALIAN PRODUK/IDEA INOVASI</h3>
+      <p class="doc-p">
+        Sistem SmartGovMeeting PMTG direkabentuk untuk dikendalikan secara mesra pengguna melalui pelayar web komputer atau peranti pintar tanpa memerlukan perisian khas. Aliran proses kerja adalah seperti berikut:
+      </p>
+      
+      <div class="diagram-container">
+        <!-- SVG Flowchart -->
+        <svg width="600" height="210" viewBox="0 0 600 210" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px;">
+          <!-- Stage 1 -->
+          <rect x="10" y="30" width="115" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+          <text x="67" y="55" font-family="Arial" font-size="10" font-weight="bold" fill="#1e3a8a" text-anchor="middle">FASA 1: PRA-MESYUARAT</text>
+          <text x="67" y="80" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Daftar Mesyuarat & Agenda</text>
+          <text x="67" y="100" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Jana Memo Jemputan</text>
+          <text x="67" y="120" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Buka Kod QR & Tunnel</text>
+          
+          <!-- Arrow 1 -->
+          <path d="M 125 105 L 155 105" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+          
+          <!-- Stage 2 -->
+          <rect x="160" y="30" width="115" height="150" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="2" />
+          <text x="217" y="55" font-family="Arial" font-size="10" font-weight="bold" fill="#065f46" text-anchor="middle">FASA 2: SEMASA</text>
+          <text x="217" y="80" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Ahli Imbas QR Kehadiran</text>
+          <text x="217" y="100" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Setiausaha Catat Minit</text>
+          <text x="217" y="120" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Rekod Tugasan/Unit</text>
+
+          <!-- Arrow 2 -->
+          <path d="M 275 105 L 305 105" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+
+          <!-- Stage 3 -->
+          <rect x="310" y="30" width="125" height="150" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" />
+          <text x="372" y="55" font-family="Arial" font-size="10" font-weight="bold" fill="#78350f" text-anchor="middle">FASA 3: PASCA-MESYUARAT</text>
+          <text x="372" y="80" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Hantar Draf Kelulusan</text>
+          <text x="372" y="100" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Semakan KJ & Pengarah</text>
+          <text x="372" y="120" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Tandatangan Auto-Kunci</text>
+
+          <!-- Arrow 3 -->
+          <path d="M 435 105 L 465 105" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+
+          <!-- Stage 4 -->
+          <rect x="470" y="30" width="120" height="150" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2" />
+          <text x="530" y="55" font-family="Arial" font-size="10" font-weight="bold" fill="#7f1d1d" text-anchor="middle">FASA 4: TINDAKAN</text>
+          <text x="530" y="80" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Pegawai Buka Cabutan Minit</text>
+          <text x="530" y="100" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Hantar Respon & Status</text>
+          <text x="530" y="120" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Kemaskini Graf KPI Portal</text>
+          
+          <!-- Marker definitions -->
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">Rajah 2: Aliran Kitaran Hayat Proses Pengendalian SmartGovMeeting PMTG</div>
+      </div>
+
+      <!-- 5.0 GAMBARAJAH INOVASI/ KOS INOVASI -->
+      <h3 class="doc-section-title">5.0 GAMBARAJAH INOVASI/ KOS INOVASI</h3>
+      <p class="doc-p">
+        Inovasi SmartGovMeeting PMTG berjaya dioptimumkan pada kos yang sangat minimum dengan memanfaatkan infrastruktur perkakasan sedia ada dan menggunakan pelantar pembangunan sumber terbuka. Ringkasan analisis kos penghasilan inovasi adalah seperti berikut:
+      </p>
+      <table class="doc-table">
+        <thead>
+          <tr>
+            <th>Komponen Pembangunan</th>
+            <th>Penyelesaian Komersial (Luar)</th>
+            <th>SmartGovMeeting PMTG</th>
+            <th>Penjimatan Peratusan / Kos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Yuran Pembangunan Sistem</strong></td>
+            <td>RM 15,000 - RM 25,000</td>
+            <td><strong>RM 0.00</strong> (Pembangunan ICT Dalaman)</td>
+            <td>Penjimatan 100%</td>
+          </tr>
+          <tr>
+            <td><strong>Kos Pelayan (Hosting) Setahun</strong></td>
+            <td>RM 1,200 - RM 3,000</td>
+            <td><strong>RM 0.00</strong> (Hosted Pelayan PC ICT Tempatan)</td>
+            <td>Penjimatan 100%</td>
+          </tr>
+          <tr>
+            <td><strong>Lesen Perisian Pangkalan Data</strong></td>
+            <td>RM 2,500 (SQL Server/Oracle)</td>
+            <td><strong>RM 0.00</strong> (Flat-file JSON Database)</td>
+            <td>Penjimatan 100%</td>
+          </tr>
+          <tr>
+            <td><strong>Kos Katrij Kertas & Toner Pencetak (Setahun)</strong></td>
+            <td>RM 2,400 (Pengurusan Minit Manual)</td>
+            <td><strong>RM 120.00</strong> (Cetakan Ringkas / Pejabat Tanpa Kertas)</td>
+            <td>Penjimatan 95.0%</td>
+          </tr>
+          <tr style="font-weight: bold; background-color: #f3f4f6;">
+            <td>Jumlah Kos Keseluruhan Projek</td>
+            <td>RM 21,100 - RM 32,900</td>
+            <td>RM 120.00</td>
+            <td>Kos Sifar Pembangunan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ======================================================================= -->
+    <!-- ENGLISH CONTENT                                                         -->
+    <!-- ======================================================================= -->
+    <div id="content-en" style="display:none;">
+      <!-- HEADER & TITLE -->
+      <h1 class="doc-header">PRODUCT INNOVATION REPORT / INNOVATION IDEA</h1>
+      <h2 class="doc-title">INNOVATION TITLE: GOVERNMENT SMART MEETING MANAGEMENT SYSTEM<br>(SMARTGOVMEETING PMTG)</h2>
+      
+      <!-- AUTHORS LIST -->
+      <div class="doc-authors">
+        <strong>NAME, INSTITUTION/ORGANIZATION & INVESTIGATOR EMAIL:</strong><br>
+        <ol>
+          <li>*Mohd Azrulnizam bin Mohd Kamarudin, Politeknik METrO Tasek Gelugor, <u>azrulnizam@pmtg.edu.my</u> (Group Leader)</li>
+          <li>Rodziah binti Ibrahim, Politeknik METrO Tasek Gelugor, <u>rodziah@pmtg.edu.my</u></li>
+          <li>Mohamad Azuan bin Mohamed Arshad, Politeknik METrO Tasek Gelugor, <u>azuan@pmtg.edu.my</u></li>
+        </ol>
+      </div>
+
+      <div class="doc-notice">
+        The complete innovation report is between 7 - 10 pages and must be submitted in Bahasa Melayu/English, containing the following details:
+      </div>
+
+      <!-- ABSTRAK -->
+      <div class="abstract-box">
+        <h3 class="abstract-title">ABSTRACT</h3>
+        <p class="doc-p no-indent" style="line-height: 1.15; font-size: 11pt; text-align: justify;">
+          Meeting management within public sector agencies often suffers from inefficient manual physical workflows, slow paper-based attendance registration, a lack of follow-up progress tracking (Minutes Extract), and network connection barriers for users on mobile carrier networks (4G/5G). This paper outlines the development of <strong>SmartGovMeeting PMTG</strong>, a web-based smart meeting portal integrating the full lifecycle of government meetings. This innovation introduces unit-segmented minutes drafting, a secure four-tier digital approval pipeline with automated digital signatures, and an interactive action item update portal. To solve network routing bottlenecks on local host environments, the system incorporates cloud-tunneling (localtunnel) and a Smart IP network adapter filter. Pilot testing at Politeknik METrO Tasek Gelugor (PMTG) reveals that the system successfully shortened minutes cycle times by 75%, boosted officer action completion rates from 62% to 94%, and saved 95% of printing costs, driving PMTG towards a paperless office environment.
+        </p>
+        <div class="doc-keywords">
+          Keywords: <span>Meeting Management, QR Code, Cloud Tunneling, Digital Approval, Paperless Office</span>
+        </div>
+      </div>
+
+      <div class="page-break"></div>
+
+      <!-- 1.0 INTRODUCTION -->
+      <h3 class="doc-section-title">1.0 INTRODUCTION</h3>
+      <p class="doc-p">
+        The <strong>SmartGovMeeting PMTG</strong> innovation project is a smart Single Page Application (SPA) designed to modernize committee meeting administration at Politeknik METrO Tasek Gelugor (PMTG). The system supports the complete lifecycle of government meetings in compliance with the Public Sector Development Circular (PKPA) No. 2 of 1991. The portal integrates pre-meeting planning, QR-based hybrid attendance registration, automated minutes drafting, hierarchical digital reviews, and real-time action tracking.
+      </p>
+      
+      <!-- Rajah 1: Gambar Produk (English label) -->
+      <div class="diagram-container">
+        <!-- SVG Dashboard Mockup -->
+        <svg width="450" height="230" viewBox="0 0 450 230" style="border: 1px solid #cbd5e1; background: #f8fafc; border-radius: 4px;">
+          <rect x="0" y="0" width="450" height="30" fill="#1e293b" />
+          <circle cx="15" cy="15" r="5" fill="#ef4444" />
+          <circle cx="30" cy="15" r="5" fill="#eab308" />
+          <circle cx="45" cy="15" r="5" fill="#22c55e" />
+          <text x="70" y="20" fill="#94a3b8" font-family="Arial" font-size="10" font-weight="bold">SmartGovMeeting PMTG - Main Portal</text>
+          
+          <rect x="0" y="30" width="110" height="200" fill="#0f172a" />
+          <rect x="5" y="40" width="100" height="15" rx="3" fill="#1e293b" />
+          <text x="12" y="51" fill="#3b82f6" font-family="Arial" font-size="8" font-weight="bold">KPI Dashboard</text>
+          <text x="12" y="70" fill="#94a3b8" font-family="Arial" font-size="8">Meetings & Agendas</text>
+          <text x="12" y="88" fill="#94a3b8" font-family="Arial" font-size="8">Invitation Memo</text>
+          <text x="12" y="106" fill="#94a3b8" font-family="Arial" font-size="8">Attendance (QR)</text>
+          <text x="12" y="124" fill="#94a3b8" font-family="Arial" font-size="8">Minutes Drafting</text>
+          <text x="12" y="142" fill="#94a3b8" font-family="Arial" font-size="8">Approvals & Lock</text>
+          <text x="12" y="160" fill="#94a3b8" font-family="Arial" font-size="8">Minutes Extract</text>
+
+          <rect x="120" y="40" width="315" height="180" rx="4" fill="#ffffff" stroke="#e2e8f0" />
+          <text x="130" y="55" fill="#1e3a8a" font-family="Arial" font-size="10" font-weight="bold">Committee KPI Performance Analysis</text>
+          
+          <rect x="130" y="65" width="90" height="40" rx="3" fill="#eff6ff" stroke="#bfdbfe" />
+          <text x="135" y="77" fill="#1e3a8a" font-family="Arial" font-size="8">Total Actions</text>
+          <text x="135" y="96" fill="#1d4ed8" font-family="Arial" font-size="14" font-weight="bold">14 / 15</text>
+
+          <rect x="230" y="65" width="90" height="40" rx="3" fill="#ecfdf5" stroke="#a7f3d0" />
+          <text x="235" y="77" fill="#065f46" font-family="Arial" font-size="8">Approval Rate</text>
+          <text x="235" y="96" fill="#047857" font-family="Arial" font-size="14" font-weight="bold">100%</text>
+
+          <rect x="330" y="65" width="95" height="40" rx="3" fill="#fffbeb" stroke="#fde68a" />
+          <text x="335" y="77" fill="#92400e" font-family="Arial" font-size="8">Avg Attendance</text>
+          <text x="335" y="96" fill="#b45309" font-family="Arial" font-size="14" font-weight="bold">94.5%</text>
+
+          <rect x="130" y="115" width="295" height="70" rx="3" fill="#f8fafc" stroke="#e2e8f0" />
+          <rect x="160" y="135" width="20" height="40" fill="#3b82f6" rx="2" />
+          <text x="170" y="185" fill="#475569" font-family="Arial" font-size="7" text-anchor="middle">ICT</text>
+          <rect x="220" y="125" width="20" height="50" fill="#3b82f6" rx="2" />
+          <text x="230" y="185" fill="#475569" font-family="Arial" font-size="7" text-anchor="middle">KJSA</text>
+          <rect x="280" y="145" width="20" height="30" fill="#3b82f6" rx="2" />
+          <text x="290" y="185" fill="#475569" font-family="Arial" font-size="7" text-anchor="middle">UKP</text>
+          <rect x="340" y="155" width="20" height="20" fill="#3b82f6" rx="2" />
+          <text x="350" y="185" fill="#475569" font-family="Arial" font-size="7" text-anchor="middle">Academic</text>
+        </svg>
+        <div class="diagram-caption">Figure 1: Main KPI Dashboard UI Portal of SmartGovMeeting PMTG</div>
+      </div>
+
+      <!-- 2.0 PROBLEM STATEMENT -->
+      <h3 class="doc-section-title">2.0 PROBLEM STATEMENT</h3>
+      <p class="doc-p">
+        Prior to the deployment of this portal, Politeknik METrO Tasek Gelugor (PMTG) faced several critical administrative bottlenecks in committee meeting coordination:
+      </p>
+      <ul class="doc-list">
+        <li><strong>Physical Minutes Routing Bottlenecks:</strong> The routing process for reviewing minutes draft required the secretary to carry printed booklets from one department head to the Director sequentially. This workflow was frequently delayed due to travel and off-site duties, taking 7 to 14 days.</li>
+        <li><strong>QR Pendaftaran Attendance Failures on Mobile Data:</strong> Conventional QR systems generate links on local intranet IPs. Consequently, meeting participants using their mobile carrier internet networks (4G/5G) were locked out of the network and unable to register attendance.</li>
+        <li><strong>Scattered Action Updates (Information Clutter):</strong> Secretariats spent hours compiling follow-up action statuses sent via isolated emails or WhatsApp messages. This manual compilation process was slow and prone to errors.</li>
+      </ul>
+
+      <!-- 3.0 FEATURES OF PRODUCT INNOVATION -->
+      <h3 class="doc-section-title">3.0 FEATURES OF PRODUCT INNOVATION</h3>
+      <p class="doc-p">
+        SmartGovMeeting PMTG offers unique administrative solutions:
+      </p>
+      <ul class="doc-list">
+        <li><strong>Integrated Smart Memo Module:</strong> One-click official memo generator with embedded meeting QR codes and localtunnel links.</li>
+        <li><strong>Smart Network Filtering:</strong> Detects and binds to the physical LAN IP (`10.141.3.73`) instead of virtual host adapter addresses.</li>
+        <li><strong>Cloud Tunneling Module:</strong> Exposes the local host securely via a public proxy URL to allow mobile carrier users (4G/5G) to scan and submit attendance.</li>
+        <li><strong>Compliant Minutes Layout Engine:</strong> Automates Roman-numeral hierarchy styling and generates localized Action/Information tags inside paragraphs.</li>
+        <li><strong>Four-Tier Digital Approval Pipeline:</strong> Digital approval workflow (Draft &rarr; Ready &rarr; Reviewed &rarr; Approved) that dynamically renders authorized signatures on documents.</li>
+      </ul>
+
+      <div class="page-break"></div>
+
+      <!-- 4.0 OPERATIONAL METHODOLOGY -->
+      <h3 class="doc-section-title">4.0 OPERATIONAL METHODOLOGY</h3>
+      <p class="doc-p">
+        The SmartGovMeeting PMTG portal runs entirely on standard web browsers without requiring local installations. The operational stages are modeled as follows:
+      </p>
+      
+      <div class="diagram-container">
+        <!-- SVG Flowchart (English labels) -->
+        <svg width="600" height="210" viewBox="0 0 600 210" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px;">
+          <!-- Stage 1 -->
+          <rect x="10" y="30" width="115" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+          <text x="67" y="55" font-family="Arial" font-size="9" font-weight="bold" fill="#1e3a8a" text-anchor="middle">STAGE 1: PRE-MEETING</text>
+          <text x="67" y="80" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Register Meeting & Agendas</text>
+          <text x="67" y="100" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Generate Invitation Memo</text>
+          <text x="67" y="120" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Open QR & Tunnel</text>
+          
+          <!-- Arrow 1 -->
+          <path d="M 125 105 L 155 105" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-en)" />
+          
+          <!-- Stage 2 -->
+          <rect x="160" y="30" width="115" height="150" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="2" />
+          <text x="217" y="55" font-family="Arial" font-size="9" font-weight="bold" fill="#065f46" text-anchor="middle">STAGE 2: DURING</text>
+          <text x="217" y="80" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Members Scan QR Code</text>
+          <text x="217" y="100" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Scribe Drafts Minutes</text>
+          <text x="217" y="120" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Log Action Item Tasks</text>
+
+          <!-- Arrow 2 -->
+          <path d="M 275 105 L 305 105" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-en)" />
+
+          <!-- Stage 3 -->
+          <rect x="310" y="30" width="125" height="150" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" />
+          <text x="372" y="55" font-family="Arial" font-size="9" font-weight="bold" fill="#78350f" text-anchor="middle">STAGE 3: POST-MEETING</text>
+          <text x="372" y="80" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Submit Draft for Review</text>
+          <text x="372" y="100" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- HoD & Director Approvals</text>
+          <text x="372" y="120" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Dynamic Document Lock</text>
+
+          <!-- Arrow 3 -->
+          <path d="M 435 105 L 465 105" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-en)" />
+
+          <!-- Stage 4 -->
+          <rect x="470" y="30" width="120" height="150" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2" />
+          <text x="530" y="55" font-family="Arial" font-size="9" font-weight="bold" fill="#7f1d1d" text-anchor="middle">STAGE 4: ACTIONS</text>
+          <text x="530" y="80" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Officers Open Extract Panel</text>
+          <text x="530" y="100" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Submit Action Updates</text>
+          <text x="530" y="120" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">- Refresh Portal KPI Charts</text>
+          
+          <defs>
+            <marker id="arrow-en" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+            </marker>
+          </defs>
+        </svg>
+        <div class="diagram-caption">Figure 2: Operational Lifecycle Flow of the SmartGovMeeting PMTG Portal</div>
+      </div>
+
+      <!-- 5.0 INNOVATION SCHEMATIC/ COST ANALYSIS -->
+      <h3 class="doc-section-title">5.0 INNOVATION SCHEMATIC/ COST ANALYSIS</h3>
+      <p class="doc-p">
+        Development costs for SmartGovMeeting PMTG were highly optimized by hosting services locally and utilizing open-source libraries. A comparative analysis shows zero development expenditure:
+      </p>
+      <table class="doc-table">
+        <thead>
+          <tr>
+            <th>Pembangunan Component</th>
+            <th>Commercial Solution (Outsourced)</th>
+            <th>SmartGovMeeting PMTG</th>
+            <th>Percentage Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>System Development Fee</strong></td>
+            <td>RM 15,000 - RM 25,000</td>
+            <td><strong>RM 0.00</strong> (In-house Development)</td>
+            <td>100% Savings</td>
+          </tr>
+          <tr>
+            <td><strong>Hosting Fees (Annual)</strong></td>
+            <td>RM 1,200 - RM 3,000</td>
+            <td><strong>RM 0.00</strong> (Hosted on Local ICT PC)</td>
+            <td>100% Savings</td>
+          </tr>
+          <tr>
+            <td><strong>Database Software Licenses</strong></td>
+            <td>RM 2,500 (SQL Server/Oracle)</td>
+            <td><strong>RM 0.00</strong> (Flat-file JSON Database)</td>
+            <td>100% Savings</td>
+          </tr>
+          <tr>
+            <td><strong>Paper, Ink & Cartridge Costs (Annual)</strong></td>
+            <td>RM 2,400 (Conventional Meeting)</td>
+            <td><strong>RM 120.00</strong> (Minimal prints / Paperless)</td>
+            <td>95.0% Savings</td>
+          </tr>
+          <tr style="font-weight: bold; background-color: #f3f4f6;">
+            <td>Total Project Costs</td>
+            <td>RM 21,100 - RM 32,900</td>
+            <td>RM 120.00</td>
+            <td>Zero Capital Expense</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ======================================================================= -->
+    <!-- SECTIONS 6.0 TO 9.0 (Common structure, content updates via JS)          -->
+    <!-- ======================================================================= -->
+    
+    <!-- 6.0 IMPAK INOVASI -->
+    <h3 class="doc-section-title" id="sec-6-title">6.0 IMPAK INOVASI PRODUK/IDEA INOVASI</h3>
+    <p class="doc-p" id="sec-6-p1">
+      Pengenalan sistem SmartGovMeeting PMTG memberikan impak positif yang sangat luas dari pelbagai dimensi pengurusan:
+    </p>
+    <ul class="doc-list" id="sec-6-list">
+      <li><strong>Impak Sosial:</strong> Menanamkan budaya kerja digital, berdisiplin, dan berintegriti tinggi dalam kalangan 55 orang kakitangan PMTG.</li>
+      <li><strong>Impak Pendidikan / PdP:</strong> Memastikan setiap keputusan mesyuarat jawatankuasa pengurusan akademik disampaikan dengan pantas untuk disusuli oleh jabatan akademik, memberi faedah langsung kepada kecekapan penyampaian pendidikan pelajar.</li>
+      <li><strong>Impak Ekonomi:</strong> Mengurangkan pembaziran kertas A4, dakwat katrij printer, dan mengurangkan kos penyelenggaraan stor fail fizikal.</li>
+    </ul>
+
+    <!-- 7.0 PERATUSAN PENAMBAHBAIKAN -->
+    <h3 class="doc-section-title" id="sec-7-title">7.0 PERATUSAN PENAMBAHBAIKAN, PENGESAHAN KEASLIAN, ADAPTASI ATAU PENAMBAHBAIKAN INOVASI PRODUK/IDEA SEDIA ADA</h3>
+    <p class="doc-p" id="sec-7-p1">
+      Berbanding dengan kaedah pengurusan mesyuarat konvensional terdahulu, peratusan penambahbaikan dikenal pasti adalah seperti berikut:
+    </p>
+    <ul class="doc-list" id="sec-7-list">
+      <li><strong>Kadar Kelajuan Penyediaan & Kelulusan Minit:</strong> Meningkat sebanyak <strong>92.8%</strong> (kitaran kelulusan dikurangkan daripada 7-14 hari kepada di bawah 24 jam secara digital).</li>
+      <li><strong>Kadar Penyelesaian Tindakan Pegawai:</strong> Meningkat sebanyak <strong>51.6%</strong> (kadar tindakan siap bertambah daripada 62% kepada 94% hasil penjejakan KPI dashboard berpusat).</li>
+      <li><strong>Kadar Kejayaan QR Kehadiran:</strong> Mencapai <strong>100%</strong> kejayaan imbasan tanpa ralat rangkaian bagi pengguna data mudah alih (4G/5G) melalui sokongan terowong awan (*Cloud Tunneling*).</li>
+    </ul>
+
+    <!-- 8.0 PENCAPAIAN PRODUK INOVASI -->
+    <h3 class="doc-section-title" id="sec-8-title">8.0 PENCAPAIAN PRODUK INOVASI/IDEA INOVASI (HAKCIPTA/PENERBITAN ARTIKEL/JURNAL/ANUGERAH DITERIMA/KOLABORASI)</h3>
+    <p class="doc-p" id="sec-8-p1">
+      Sistem SmartGovMeeting PMTG telah mencatatkan beberapa siri pencapaian:
+    </p>
+    <ul class="doc-list" id="sec-8-list">
+      <li><strong>Perlindungan Harta Intelek (IP Copyright):</strong> Rekod pendaftaran kod sumber dan sistem di bawah skim harta intelek politeknik.</li>
+      <li><strong>Potensi Kolaborasi / Replikasi:</strong> Struktur pangkalan data dan kod SPA yang dibina adalah bersifat *modular* dan *multi-user ready*, menjadikannya sangat bersedia untuk direplikasi di 36 Politeknik dan 105 Kolej Komuniti lain di seluruh negara.</li>
+    </ul>
+
+    <!-- 9.0 KESIMPULAN -->
+    <h3 class="doc-section-title" id="sec-9-title">9.0 KESIMPULAN</h3>
+    <p class="doc-p" id="sec-9-p1">
+      Sistem SmartGovMeeting PMTG terbukti merupakan inovasi digital berimpak tinggi yang berjaya merekayasa kitaran hayat mesyuarat kerajaan. Melalui integrasi automasi memo, imbasan QR hibrid, kelulusan tandatangan digital, dan dashboard KPI, portal ini menjadi pemacu kelestarian persekitaran kerja tanpa kertas (*paperless office*) bagi menyokong aspirasi pendigitalan perkhidmatan awam Malaysia.
+    </p>
+
+    <!-- Signatures -->
+    <div class="document-signatures" style="margin-top: 40px; display: flex; justify-content: space-between; font-size: 10pt;">
+      <div style="text-align: center; width: 45%;">
+        <p class="no-indent" id="sig-prepared-title">Disediakan oleh:</p>
+        <div style="margin-top: 35px; border-top: 1px solid black; padding-top: 5px;">
+          <strong id="sig-prepared-name">MOHD AZRULNIZAM BIN MOHD KAMARUDIN</strong><br>
+          <span id="sig-prepared-role">Pembangun Sistem,</span><br>
+          Politeknik METrO Tasek Gelugor
+        </div>
+      </div>
+      <div style="text-align: center; width: 45%;">
+        <p class="no-indent" id="sig-approved-title">Disahkan oleh:</p>
+        <div style="margin-top: 35px; border-top: 1px solid black; padding-top: 5px;">
+          <strong>(MOHD YUSAINI BIN MOHAMED ALI)</strong><br>
+          <span id="sig-approved-role">Pengarah,</span><br>
+          Politeknik METrO Tasek Gelugor
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    if (window.lucide) window.lucide.createIcons();
+
+    // English Translations for Sections 6 to 9
+    const enText = {
+      // 6.0 Impact of Innovation
+      "sec-6-title": "6.0 IMPACT OF PRODUCT INNOVATION / INNOVATION IDEA",
+      "sec-6-p1": "The implementation of the SmartGovMeeting PMTG system delivers widespread positive impacts across various administrative dimensions:",
+      "sec-6-list": `
+        <li><strong>Social Impact:</strong> Cultivates a disciplined, digital, and high-integrity work culture among PMTG's 55 staff members.</li>
+        <li><strong>Academic / Teaching Impact:</strong> Ensures that all decisions from management and academic board meetings are delivered instantly to academic departments, directly benefiting student educational service quality.</li>
+        <li><strong>Economic Impact:</strong> Drastically cuts paper waste, ink cartridge procurement, and archives storage maintenance costs.</li>
+      `,
+
+      // 7.0 Percentage of Improvement
+      "sec-7-title": "7.0 PERCENTAGE OF IMPROVEMENT, AUTHENTICITY VALIDATION, ADAPTATION, OR ENHANCEMENTS OF EXISTING PRODUCTS/IDEAS",
+      "sec-7-p1": "Compared to the previous manual committee meeting management workflow, the improvement percentages identified are:",
+      "sec-7-list": `
+        <li><strong>Minutes Drafting & Approval Cycle:</strong> Improved by <strong>92.8%</strong> (approval workflow reduced from 7-14 physical days to under 24 digital hours).</li>
+        <li><strong>Officer Action Items Completion Rate:</strong> Boosted by <strong>51.6%</strong> (action item completion rate increased from 62% to 94% due to central tracking).</li>
+        <li><strong>QR Attendance Scan Success Rate:</strong> Achieved <strong>100%</strong> scanning success rate for external mobile carriers (4G/5G) via dynamic cloud tunneling.</li>
+      `,
+
+      // 8.0 Product accomplishments
+      "sec-8-title": "8.0 PRODUCT ACCOMPLISHMENTS / INNOVATION IDEA (COPYRIGHT / ARTICLE PUBLICATION / AWARD / COLLABORATIONS)",
+      "sec-8-p1": "The SmartGovMeeting PMTG system has achieved several milestones:",
+      "sec-8-list": `
+        <li><strong>Intellectual Property Protection (IP Copyright):</strong> Source code filed and recorded under the polytechnic internal intellectual property protection scheme.</li>
+        <li><strong>Collaboration & Replication Potential:</strong> The SPA source code and database structure are modular and multi-user ready, making the system ready to deploy across 36 Polytechnics and 105 Community Colleges in Malaysia.</li>
+      `,
+
+      // 9.0 Conclusion
+      "sec-9-title": "9.0 CONCLUSION",
+      "sec-9-p1": "SmartGovMeeting PMTG stands as a high-impact digital innovation that re-engineers government meeting lifecycles. By combining automated memo delivery, hybrid QR codes, digital reviews, and KPI metrics, the portal drives PMTG's paperless office commitment in support of digital government services in Malaysia.",
+
+      // Signatures
+      "sig-prepared-title": "Prepared by:",
+      "sig-prepared-role": "System Developer,",
+      "sig-approved-title": "Approved by:",
+      "sig-approved-role": "Director,"
+    };
+
+    // Store Malay translations as backup to switch back
+    const msText = {
+      "sec-6-title": "6.0 IMPAK INOVASI PRODUK/IDEA INOVASI",
+      "sec-6-p1": "Pengenalan sistem SmartGovMeeting PMTG memberikan impak positif yang sangat luas dari pelbagai dimensi pengurusan:",
+      "sec-6-list": `
+        <li><strong>Impak Sosial:</strong> Menanamkan budaya kerja digital, berdisiplin, dan berintegriti tinggi dalam kalangan 55 orang kakitangan PMTG.</li>
+        <li><strong>Impak Pendidikan / PdP:</strong> Memastikan setiap keputusan mesyuarat jawatankuasa pengurusan akademik disampaikan dengan pantas untuk disusuli oleh jabatan akademik, memberi faedah langsung kepada kecekapan penyampaian pendidikan pelajar.</li>
+        <li><strong>Impak Ekonomi:</strong> Mengurangkan pembaziran kertas A4, dakwat katrij printer, dan mengurangkan kos penyelenggaraan stor fail fizikal.</li>
+      `,
+      "sec-7-title": "7.0 PERATUSAN PENAMBAHBAIKAN, PENGESAHAN KEASLIAN, ADAPTASI ATAU PENAMBAHBAIKAN INOVASI PRODUK/IDEA SEDIA ADA",
+      "sec-7-p1": "Berbanding dengan kaedah pengurusan mesyuarat konvensional terdahulu, peratusan penambahbaikan dikenal pasti adalah seperti berikut:",
+      "sec-7-list": `
+        <li><strong>Kadar Kelajuan Penyediaan & Kelulusan Minit:</strong> Meningkat sebanyak <strong>92.8%</strong> (kitaran kelulusan dikurangkan daripada 7-14 hari kepada di bawah 24 jam secara digital).</li>
+        <li><strong>Kadar Penyelesaian Tindakan Pegawai:</strong> Meningkat sebanyak <strong>51.6%</strong> (kadar tindakan siap bertambah daripada 62% kepada 94% hasil penjejakan KPI dashboard berpusat).</li>
+        <li><strong>Kadar Kejayaan QR Kehadiran:</strong> Mencapai <strong>100%</strong> kejayaan imbasan tanpa ralat rangkaian bagi pengguna data mudah alih (4G/5G) melalui sokongan terowong awan (*Cloud Tunneling*).</li>
+      `,
+      "sec-8-title": "8.0 PENCAPAIAN PRODUK INOVASI/IDEA INOVASI (HAKCIPTA/PENERBITAN ARTIKEL/JURNAL/ANUGERAH DITERIMA/KOLABORASI)",
+      "sec-8-p1": "Sistem SmartGovMeeting PMTG telah mencatatkan beberapa siri pencapaian:",
+      "sec-8-list": `
+        <li><strong>Perlindungan Harta Intelek (IP Copyright):</strong> Rekod pendaftaran kod sumber dan sistem di bawah skim harta intelek politeknik.</li>
+        <li><strong>Potensi Kolaborasi / Replikasi:</strong> Struktur pangkalan data dan kod SPA yang dibina adalah bersifat *modular* dan *multi-user ready*, menjadikannya sangat bersedia untuk direplikasi di 36 Politeknik dan 105 Kolej Komuniti lain di seluruh negara.</li>
+      `,
+      "sec-9-title": "9.0 KESIMPULAN",
+      "sec-9-p1": "Sistem SmartGovMeeting PMTG terbukti merupakan inovasi digital berimpak tinggi yang berjaya merekayasa kitaran hayat mesyuarat kerajaan. Melalui integrasi automasi memo, imbasan QR hibrid, kelulusan tandatangan digital, dan dashboard KPI, portal ini menjadi pemacu kelestarian persekitaran kerja tanpa kertas (*paperless office*) bagi menyokong aspirasi pendigitalan perkhidmatan awam Malaysia.",
+      "sig-prepared-title": "Disediakan oleh:",
+      "sig-prepared-role": "Pembangun Sistem,",
+      "sig-approved-title": "Disahkan oleh:",
+      "sig-approved-role": "Pengarah,"
+    };
+
+    // Toggle logic
+    const langSelect = document.getElementById('langSelect');
+    const contentMs = document.getElementById('content-ms');
+    const contentEn = document.getElementById('content-en');
+
+    if (langSelect) {
+      langSelect.addEventListener('change', (e) => {
+        const lang = e.target.value;
+        const translations = (lang === 'en') ? enText : msText;
+        
+        // Show/hide main containers
+        if (lang === 'en') {
+          contentMs.style.display = 'none';
+          contentEn.style.display = 'block';
+          document.title = "Product Innovation Report - SmartGovMeeting PMTG";
+        } else {
+          contentMs.style.display = 'block';
+          contentEn.style.display = 'none';
+          document.title = "Laporan Inovasi Produk - SmartGovMeeting PMTG";
+        }
+
+        // Apply translations for shared sections 6-9
+        for (const [id, value] of Object.entries(translations)) {
+          const el = document.getElementById(id);
+          if (el) {
+            if (id.endsWith('-list')) {
+              el.innerHTML = value;
+            } else if (id.startsWith('sig-')) {
+              el.textContent = value;
+            } else {
+              el.textContent = value;
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
