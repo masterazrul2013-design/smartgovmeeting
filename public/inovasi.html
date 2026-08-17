@@ -289,6 +289,7 @@
       <select id="langSelect" style="padding:6px 12px; font-family:'Outfit'; font-size:13px; border-radius:4px; border:1px solid #cbd5e1; background:white; color:var(--text-primary); cursor:pointer;">
         <option value="ms">Bahasa Melayu</option>
         <option value="en">English</option>
+        <option value="ja">日本語 (Japanese)</option>
       </select>
       <button class="btn-print" onclick="window.print()">
         <i data-lucide="printer" style="width: 16px; height: 16px;"></i> Cetak Laporan PDF (A4)
@@ -354,7 +355,7 @@
             Sistem SmartGovMeeting PMTG mengintegrasikan kitaran lengkap mesyuarat kerajaan dalam satu platform digital bersepadu. Inovasi utama sistem ini merangkumi penjanaan memo jemputan pintar lengkap dengan kod QR, pendaftaran kehadiran hibrid menggunakan alamat IP fizikal PC pelayan lokal (Wi-Fi tempatan) atau terowong awam awan (*localtunnel*) bagi pengguna data mudah alih (4G/5G), modul penulisan minit bersegmen mengikut unit, kitaran kelulusan digital 4 peringkat bertandatangan digital, portal Cabutan Minit interaktif, dan dashboard KPI masa nyata.
           </p>
           <p>
-            Pelaksanaan sistem ini di PMTG telah menghasilkan impak signifikan, termasuk penjimatan masa penyediaan minit sebanyak 75%, pengurangan kos cetakan kertas, serta peningkatan kadar penyelesaian tindakan pegawai daripada 62% kepada 94%. Sistem ini menjadi pemacu utama kepada usaha PMTG untuk membudayakan amalan pentadbiran tanpa kertas (*paperless office*) dan memperkasakan ekosistem kerja digital pintar dalam sektor awam Malaysia. Keupayaan sistem ini untuk direplikasi menjadikannya amat sesuai untuk diperluaskan ke institusi politeknik dan kolej komuniti lain di seluruh negara.
+            Pelaksanaan sistem ini di PMTG telah menghasilkan impak signifikan, termasuk penjimatan masa penyediaan minit sebanyak 75%, pengurangan kos cetakan kertas, serta peningkatan kadar penyelesaian tindakan pegawai daripada 62% kepada 94%. Sistem ini menjadi pemacu utama kepada usaha PMTG untuk membudayakan amalan pentadbiran tanpa kertas (*paperless office*) dan memperkasakan ekosistem kerja digital pintar dalam sektor awam Malaysia.
           </p>
         </div>
 
@@ -364,7 +365,7 @@
             Tujuan utama inovasi SmartGovMeeting PMTG adalah untuk merekayasa sistem penyampaian perkhidmatan dalaman (*internal service delivery*) pengurusan mesyuarat jawatankuasa kerja kerajaan di Politeknik METrO Tasek Gelugor. Melalui langkah automasi kitaran hayat mesyuarat yang komprehensif, inovasi ini menukarkan pentadbiran konvensional yang bersifat kertas kepada persekitaran digital berasaskan awan yang tangkas.
           </p>
           <p>
-            Secara khusus, tujuan inovasi ini adalah untuk memastikan pematuhan piawaian format minit mesyuarat sektor awam mengikut ketetapan Pekeliling Kemajuan Pentadbiran Awam (PKPA) Malaysia, termasuk penggunaan Roman numeral untuk agenda utama, sistem penomboran sub-perenggan yang kemas, serta penandaan tindakan/makluman di akhir ayat. Di samping itu, portal ini dibangunkan untuk membolehkan pemantauan tindakan komitmen pegawai secara berpusat bagi menjamin ketelusan pelaksanaan keputusan mesyuarat.
+            Secara khusus, tujuan inovasi ini adalah untuk memastikan pematuhan piawaian format minit mesyuarat sektor awam mengikut ketetapan Pekeliling Kemajuan Pentadbiran Awam (PKPA) Malaysia, termasuk penggunaan Roman numeral untuk agenda utama, sistem penomboran sub-perenggan yang kemas, serta penandaan tindakan/makluman di akhir ayat.
           </p>
         </div>
 
@@ -376,15 +377,12 @@
           <p>
             Secara tradisinya, urusan pentadbiran mesyuarat di PMTG dikendalikan secara konvensional menggunakan kertas kerja fizikal dan program pejabat standard (Microsoft Word dan Excel) secara berasingan. Setiausaha mesyuarat menanggung beban kerja pentadbiran yang tinggi sebelum, semasa, dan selepas mesyuarat bermula. Amalan ini mewujudkan kelembapan aliran maklumat yang memberi kesan kepada kepantasan organisasi bertindak.
           </p>
-          <p>
-            Pengesanan komitmen tindakan daripada minit mesyuarat terdahulu (Cabutan Minit) sebelum ini disebarkan melalui pesanan ringkas atau helaian kertas maklum balas bercetak. Pegawai yang bertanggungjawab terpaksa mengisi borang respon secara manual, dan setiausaha terpaksa mengumpul serta menyalin semula ulasan berkenaan ke dalam satu dokumen gabungan. Keadaan ini bukan sahaja menyumbang kepada pembaziran masa, tetapi juga meningkatkan risiko keciciran maklumat tindakan penting yang boleh menjejaskan pencapaian KPI organisasi.
-          </p>
         </div>
 
         <div class="report-section">
           <h2>4. Rasional Pembangunan & Penyelesaian Isu</h2>
           <p>
-            Rasional utama di sebalik pembangunan sistem SmartGovMeeting PMTG berpusat kepada penyelesaian empat isu pentadbiran utama:
+            Rasional utama di sebalik pembangunan sistem SmartGovMeeting PMTG berpusat kepada penyelesaian tiga isu pentadbiran utama:
           </p>
           <p class="no-indent" style="font-weight: 600; margin-bottom: 4px;">1. Kelewatan Aliran Kelulusan Minit (Workflow Bottleneck):</p>
           <p>
@@ -392,7 +390,7 @@
           </p>
           <p class="no-indent" style="font-weight: 600; margin-bottom: 4px;">2. Isu Kegagalan Rangkaian Telefon Pintar (Network Constraints):</p>
           <p>
-            Pendaftaran kehadiran secara layari kod QR di pejabat sering kali gagal dibuka pada telefon pintar ahli mesyuarat sekiranya mereka menggunakan data mudah alih (4G/5G) disebabkan oleh sekatan intranet IP fizikal lokal pelayan. Isu routing rangkaian ini memerlukan penyelesaian integrasi *Cloud Tunneling* dinamik.
+            Pendaftaran kehadiran secara imbasan kod QR sering kali gagal dibuka pada telefon pintar ahli mesyuarat sekiranya mereka menggunakan data mudah alih (4G/5G) disebabkan oleh sekatan intranet IP fizikal lokal pelayan. Isu routing rangkaian ini memerlukan penyelesaian integrasi terowong awan (*cloud tunneling*).
           </p>
           <p class="no-indent" style="font-weight: 600; margin-bottom: 4px;">3. Lambakan Maklum Balas Bertindih:</p>
           <p>
@@ -415,7 +413,6 @@
           <ul>
             <li>Mencapai kecekapan kos pentadbiran mesyuarat sehingga **95% penjimatan bahan bercetak** ke arah amalan *Paperless Office*.</li>
             <li>Meningkatkan Indeks Penyelesaian Tindakan (KPI Action Index) kakitangan PMTG daripada **62% kepada sekurang-kurangnya 90%** melalui sistem pemantauan KPI masa nyata.</li>
-            <li>Menyediakan templat penyelesaian sistem yang sedia direplikasi oleh mana-mana politeknik atau kolej komuniti di bawah Kementerian Pendidikan Tinggi.</li>
           </ul>
         </div>
 
@@ -435,7 +432,7 @@
         <div class="report-section" style="page-break-before: always; break-before: page;">
           <h2>7. Kaedah Pelaksanaan Projek & Spesifikasi Teknikal</h2>
           <p>
-            Projek inovasi SmartGovMeeting PMTG dilaksanakan berdasarkan kaedah pembangunan tangkas (*Agile Software Development*). Kitaran ini membabitkan 6 fasa utama bagi memastikan lelaran aplikasi sentiasa sejajar dengan maklum balas pengguna PMTG:
+            Projek inovasi SmartGovMeeting PMTG dilaksanakan berdasarkan kaedah pembangunan tangkas (*Agile Software Development*). Kitaran ini membabitkan 4 fasa utama:
           </p>
           
           <svg width="600" height="120" viewBox="0 0 600 120" style="display: block; margin: 20px auto; max-width: 100%;">
@@ -449,8 +446,8 @@
             <text x="220" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">2. Pembangunan</text>
             <text x="220" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">Kod & Database</text>
             <rect x="320" y="30" width="120" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
-            <text x="380" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">3. Integrasi &</text>
-            <text x="380" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">Ujian IP/Tunneling</text>
+            <text x="380" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">3. Ujian & Uji Rangkaian</text>
+            <text x="380" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">IP & Tunneling</text>
             <rect x="480" y="30" width="110" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
             <text x="535" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">4. Pelancaran</text>
             <text x="535" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">& Latihan Staf</text>
@@ -465,10 +462,6 @@
             <li><strong>Pelayan Aplikasi (Backend):</strong> Node.js dengan rangka kerja HTTP Express. Menguruskan logik perniagaan, keselamatan routing, dan operasi fail.</li>
             <li><strong>Penyimpanan Data (Database):</strong> Fail berformat JSON (`db.json`) sebagai pangkalan data flat-file yang ringan.</li>
           </ul>
-          <h3>Spesifikasi Teknikal & Integrasi Terowong Rangkaian:</h3>
-          <p>
-            Salah satu inovasi terbesar ialah keupayaan penyambungan hibrid: **Smart IP Filter** untuk menjana kod QR kehadiran pada IP fizikal pelayan (`10.141.3.73`) dan **Cloud Tunneling** menerusi localtunnel bagi menyokong pendaftaran luar talian melalui rangkaian mudah alih 4G/5G.
-          </p>
         </div>
 
         <div class="report-section">
@@ -584,7 +577,7 @@
             The SmartGovMeeting PMTG system integrates the complete government meeting life cycle into a single unified digital platform. The primary innovations of this system include an automated invitation memo generator complete with QR codes, a hybrid attendance registration module leveraging the local server host's physical network IP address (`10.141.3.73`) and cloud-tunneling (localtunnel) for mobile network users (4G/5G), a unit-segmented minutes drafting module, a secure four-tier digital approval workflow with digital signatures, an interactive action item feedback portal (Minutes Extract), and a real-time KPI dashboard.
           </p>
           <p>
-            The implementation of this system at PMTG has generated significant impacts, including a 75% reduction in minutes preparation and approval cycle time, a 95% reduction in printing costs, and a rise in action item completion rates from 62% to 94%. This system serves as a key driver for PMTG's paperless office initiative and the digitalization of public sector workflows in Malaysia. Furthermore, its highly replicable architecture makes it suitable for deployment across other polytechnics and community colleges nationwide.
+            The implementation of this system at PMTG has generated significant impacts, including a 75% reduction in minutes preparation and approval cycle time, a 95% reduction in printing costs, and a rise in action item completion rates from 62% to 94%.
           </p>
         </div>
 
@@ -594,7 +587,7 @@
             The main purpose of the SmartGovMeeting PMTG innovation is to re-engineer the internal service delivery of government committee meeting management at Politeknik METrO Tasek Gelugor. By automating the entire meeting life cycle, this system transitions conventional paper-based operations into an agile, cloud-integrated digital workspace.
           </p>
           <p>
-            Specifically, the innovation aims to guarantee compliance with public sector minutes formatting standards, as mandated by the Public Sector Development Circular (PKPA), which requires Roman numerals for main agendas, a structured sub-paragraph numbering scheme, and localized action/information indicators at the end of paragraphs. Additionally, the system provides a centralized tracking portal to monitor officers' action item status, ensuring transparency and accountability in executing decisions.
+            Specifically, the innovation aims to guarantee compliance with public sector minutes formatting standards, as mandated by the Public Sector Development Circular (PKPA), which requires Roman numerals for main agendas, a structured sub-paragraph numbering scheme, and localized action/information indicators at the end of paragraphs.
           </p>
         </div>
 
@@ -606,15 +599,12 @@
           <p>
             Historically, committee administrative affairs were managed using isolated word processors and spreadsheet files (Microsoft Word and Excel) and physical routing. Secretariats bore a heavy administrative burden before, during, and after meetings. This manual cycle created information flow delays that slowed down organizational response times.
           </p>
-          <p>
-            Tracking action items from previous meetings was previously conducted using distributed papers or text messages. Responsible officers had to submit replies manually, and secretariats spent hours compiling these feedbacks into a single table. This process was prone to data duplication, delays, and critical details being missed, which affected PMTG's overall KPI targets.
-          </p>
         </div>
 
         <div class="report-section">
           <h2>4. Rationale of Pembangunan & Resolution of Issues</h2>
           <p>
-            The development of SmartGovMeeting PMTG is driven by several administrative needs to resolve four primary operational bottlenecks:
+            The development of SmartGovMeeting PMTG is driven by several administrative needs to resolve three primary operational bottlenecks:
           </p>
           <p class="no-indent" style="font-weight: 600; margin-bottom: 4px;">1. Approval Workflow Bottleneck:</p>
           <p>
@@ -645,7 +635,6 @@
           <ul>
             <li>Achieve up to **95% in printing cost savings** to support the Green IT paperless initiative.</li>
             <li>Increase the action item completion rate of PMTG staff from **62% to at least 90%** through centralized dashboard tracking.</li>
-            <li>Establish a baseline system template that is ready for replication in other polytechnics and community colleges under KPT.</li>
           </ul>
         </div>
 
@@ -679,8 +668,8 @@
             <text x="220" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">2. Development</text>
             <text x="220" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">Code & Database</text>
             <rect x="320" y="30" width="120" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
-            <text x="380" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">3. Integration &</text>
-            <text x="380" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">IP/Tunnel Testing</text>
+            <text x="380" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">3. Testing Network</text>
+            <text x="380" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">IP & Tunneling</text>
             <rect x="480" y="30" width="110" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
             <text x="535" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">4. Launching</text>
             <text x="535" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">& Staff Training</text>
@@ -691,14 +680,10 @@
             The portal is designed as a lightweight client-server web application:
           </p>
           <ul>
-            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Lucide Icons, and Chart.js for dashboard visualizations. The design supports full screen responsiveness and clean A4 print styles.</li>
+            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Lucide Icons, and Chart.js for dashboard visualizations.</li>
             <li><strong>Backend:</strong> Node.js with the Express HTTP framework to handle business logic, IP filtering, and database operations.</li>
-            <li><strong>Database:</strong> Flat-file JSON database (`db.json`) for quick reads and writes without database server installation overheads.</li>
+            <li><strong>Database:</strong> Flat-file JSON database (`db.json`) for quick reads and writes.</li>
           </ul>
-          <h3>Technical Specifications & Network Tunneling:</h3>
-          <p>
-            A core innovation is the hybrid network architecture: **Smart IP Filter** which detects the server host's physical network adapter (`10.141.3.73`) to generate local QR codes, and **Cloud Tunneling** (localtunnel) which exposes the port temporarily, resolving routing conflicts for external mobile networks.
-          </p>
         </div>
 
         <div class="report-section">
@@ -759,6 +744,229 @@
       </div>
     </div>
 
+    <!-- ======================================================================= -->
+    <!-- 日本語 (JAPANESE) CONTENT CONTAINER                                     -->
+    <!-- ======================================================================= -->
+    <div id="content-ja" style="display:none;">
+      <!-- COVER PAGE (Japanese) -->
+      <div class="cover-page-section">
+        <img src="logo.jpg" class="cover-logo" alt="Politeknik METrO Tasek Gelugor">
+        <h1 class="cover-title">イノベーション提案書</h1>
+        <div class="cover-divider"></div>
+        <div class="cover-subtitle">政府スマート会議管理システム<br>(SMARTGOVMEETING PMTG)</div>
+        
+        <div class="cover-meta" style="margin-top: 50px;">
+          <p class="no-indent"><strong>提出者:</strong></p>
+          <p class="no-indent" style="font-size: 11pt; font-weight: 700; color: var(--color-primary); margin-bottom: 2px;">1. モハド・アズルールニザム・ビン・モハド・カマルディン</p>
+          <p class="no-indent" style="font-size: 11pt; font-weight: 700; color: var(--color-primary); margin-bottom: 2px;">2. ロジア・ビンティ・イブラヒム</p>
+          <p class="no-indent" style="font-size: 11pt; font-weight: 700; color: var(--color-primary); margin-bottom: 10px;">3. モハマド・アズアン・ビン・モハメド・アルシャド</p>
+          <p class="no-indent">ポリテクニック・メトロ・タセク・ゲルゴール (PMTG)</p>
+          <p class="no-indent">マレーシア高等教育省</p>
+          <p class="no-indent" style="margin-top: 30px; font-size: 10pt; color: #64748b;">日付: 2026年8月4日</p>
+        </div>
+      </div>
+
+      <!-- TABLE OF CONTENTS (Japanese) -->
+      <div class="toc-page-section">
+        <h2 style="border-bottom: 2px solid var(--color-primary); padding-bottom: 8px; margin-top: 0;">目次</h2>
+        <ul class="toc-list">
+          <li class="toc-item"><span class="toc-title">1. エグゼクティブサマリー</span><span class="toc-dots"></span><span class="toc-page">3</span></li>
+          <li class="toc-item"><span class="toc-title">2. イノベーションの目的</span><span class="toc-dots"></span><span class="toc-page">4</span></li>
+          <li class="toc-item"><span class="toc-title">3. PMTGにおける委員会運営イノベーションの背景</span><span class="toc-dots"></span><span class="toc-page">4</span></li>
+          <li class="toc-item"><span class="toc-title">4. 開発の根拠と課題解決</span><span class="toc-dots"></span><span class="toc-page">5</span></li>
+          <li class="toc-item"><span class="toc-title">5. プロジェクト目標（短期および長期）</span><span class="toc-dots"></span><span class="toc-page">6</span></li>
+          <li class="toc-item"><span class="toc-title">6. ターゲットグループと受益者のプロフィール</span><span class="toc-dots"></span><span class="toc-page">6</span></li>
+          <li class="toc-item"><span class="toc-title">7. プロジェクト実施方法と技術仕様</span><span class="toc-dots"></span><span class="toc-page">7</span></li>
+          <li class="toc-item"><span class="toc-title">8. イノベーションの影響分析とコスト削減の調査</span><span class="toc-dots"></span><span class="toc-page">9</span></li>
+          <li class="toc-item"><span class="toc-title">9. 結論と今後の開発提案</span><span class="toc-dots"></span><span class="toc-page">10</span></li>
+        </ul>
+        <div style="margin-top: 60px; padding: 20px; background-color: #f8fafc; border-left: 4px solid var(--color-primary); border-radius: 4px;">
+          <h4 style="font-size: 11pt; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">参照回覧詳細:</h4>
+          <p class="no-indent" style="font-size: 10pt; color: var(--text-secondary); line-height: 1.5; text-indent: 0;">
+            本イノベーション提案書は、マレーシア政府委員会運営および会議管理に関する1991年公共部門開発回覧（PKPA）第2号に準拠し、マレーシア・デジタル経済ブループリント（MyDIGITAL）の目標に沿って策定されました。
+          </p>
+        </div>
+      </div>
+
+      <!-- REPORT BODY (Japanese) -->
+      <div class="report-body">
+        <div class="report-section">
+          <h2>1. エグゼクティブサマリー</h2>
+          <p>
+            イノベーションプロジェクト<strong>SmartGovMeeting PMTG</strong>は、ポリテクニック・メトロ・タセク・ゲルゴール（PMTG）における従来の委員会会議運営の非効率性を克服するためのプロアクティブなデジタルトランスフォーメーション（DX）の取り組みとして開発されました。以前の会議運営は、招集通知メモの物理的な印刷、対面での紙による出席登録、時間のかかる手作業での議事録作成、未完了のフォローアップタスク（議事録抜粋）の追跡困難など、多くの非効率なアナログ業務に依存していました。
+          </p>
+          <p>
+            SmartGovMeeting PMTGシステムは、政府機関の会議ライフサイクル全体を単一の統合デジタルプラットフォームに統合します。主な特徴として、自動的にQRコードを付与したスマート招集通知の作成、ローカルサーバーPCの物理IPアドレス（`10.141.3.73`）やクラウド経由のトンネリング（localtunnel）を活用したモバイル通信回線（4G/5G）対応ハイブリッド出席登録、部門ごとの分割議事録作成機能、電子署名付き4段階デジタル承認ワークフロー、リアルタイム進捗追跡ダッシュボードが含まれます。
+          </p>
+          <p>
+            本システムをPMTGに導入したことで、議事録作成と承認サイクルの所要時間を75%短縮し、印刷資材などの運営費を95%削減、職員のタスク完了率を62%から94%に大幅向上させました。これにより、ペーパーレスオフィスの実現に直接貢献しています。
+          </p>
+        </div>
+
+        <div class="report-section">
+          <h2>2. イノベーションの目的</h2>
+          <p>
+            SmartGovMeeting PMTGイノベーションの主な目的は、PMTG内での政府委員会会議管理の内部サービス提供プロセスを再構築することです。会議ライフサイクル全体を全面的に自動化することにより、従来の紙ベースの管理体制から、俊敏でクラウド連携したペーパーレスなデジタルワークスペースへと移行させます。
+          </p>
+          <p>
+            具体的には、公共部門の開発回覧（PKPA）で規定されている議事録書式基準の厳格な遵守（アジェンダのローマ数字表記、詳細な段落番号体系、および文末の「行動／報告」局所タグの自動付与など）を保証します。また、中央で管理される進捗状況の追跡画面を構築し、各職員に割り当てられたタスクの実施状況を可視化、組織意思決定の透明性を担保します。
+          </p>
+        </div>
+
+        <div class="report-section">
+          <h2>3. PMTGにおける委員会運営イノベーションの背景</h2>
+          <p>
+            マレーシア高等教育省（MOHE）傘下の公共高等教育機関であるポリテクニック・メトロ・タセク・ゲルゴール（PMTG）は、学術委員会、管理職会議、財務委員会、部署共同審議会（MBJ）など、数多くの公式会議を管理しています。これらの会議は、組織内の異なる部署間で決定事項を円滑に進める上で極めて重要です。
+          </p>
+          <p>
+            歴史的に、これらの事務作業は紙の資料配布と個別のファイル管理に依存し、事務局や秘書は会議の前後において非常に多くの付帯業務を強いられてきました。このアナログな環境が情報伝達の遅延を生み、意思決定の迅速な実行を妨げる原因となっていました。さらに、過去の決定事項（タスク指示）に対する回答を手書きや別個のメールで収集するため、転記ミスやタスクの漏れが発生し、PMTGの目標達成管理に支障をきたしていました。
+          </p>
+        </div>
+
+        <div class="report-section">
+          <h2>4. 開発の根拠と課題解決</h2>
+          <p>
+            SmartGovMeeting PMTGの開発は、主に次の3つの実務上のボトルネックの解決を根拠としています：
+          </p>
+          <p class="no-indent" style="font-weight: 600; margin-bottom: 4px;">1. 承認ワークフローの停滞:</p>
+          <p>
+            紙による持ち回り回覧承認では、承認者である学科長や所長の出張・研修等により承認が停滞し、会議から正式な発効まで7日から14日を要していました。
+          </p>
+          <p class="no-indent" style="font-weight: 600; margin-bottom: 4px;">2. モバイル通信接続の制限:</p>
+          <p>
+            ローカルサーバーのIP制限により、事務所Wi-Fiではなく自身のキャリア回線（4G/5G）を使用している参加者がQRコードによる出席登録画面にアクセスできない不具合が発生していました。これに対応するため、安全なパブリッククラウドトンネリング連携を組み込みました。
+          </p>
+          <p class="no-indent" style="font-weight: 600; margin-bottom: 4px;">3. バラバラに送信される進捗回答の散乱:</p>
+          <p>
+            複数のメールやメッセージで報告されるタスク進捗状況を手動で結合する作業に時間がかかり、重複や漏れが発生していました。
+          </p>
+        </div>
+
+        <div class="report-section">
+          <h2>5. プロジェクト目標（短期および長期）</h2>
+          <p>
+            システムの円滑な定着のため、以下の目標を設定して開発されました：
+          </p>
+          <h3>短期目標（運用面）:</h3>
+          <ul>
+            <li>議事録作成・確認・正式承認までの期間を<strong>7〜14日</strong>からデジタル化により<strong>48時間以内</strong>に短縮。</li>
+            <li>モバイル通信（4G/5G）利用者におけるQRコード出席登録のネットワーク接続エラーを100%解決。</li>
+            <li>中央データベースを介した進捗回答の一元収集により、進捗確認の回答率を100%デジタル化。</li>
+          </ul>
+          <h3>長期目標（戦略面）:</h3>
+          <ul>
+            <li>印刷物（用紙・トナー）の調達数を<strong>95%削減</strong>し、ペーパーレスオフィス（Green IT）の推進。</li>
+            <li>一元的な進捗追跡ダッシュボードにより、職員のタスク完了率を<strong>62%から最低90%以上</strong>へ向上。</li>
+            <li>マレーシアの他のポリテクニックやコミュニティカレッジへ容易に複製・展開できるひな型の構築。</li>
+          </ul>
+        </div>
+
+        <div class="report-section">
+          <h2>6. ターゲットグループと受益者のプロフィール</h2>
+          <p>
+            本システムの直接的な対象範囲は、PMTGの全ての組織階層にわたります：
+          </p>
+          <ol>
+            <li><strong>会議主催者（所長等）:</strong> 一元化されたダッシュボード上のKPI分析グラフで決定事項の進捗を直接把握し、ワンクリックでデジタル承認します。</li>
+            <li><strong>議事録確認者（副所長・学科長）:</strong> 会議終了後に速やかにドラフトを電子的に査読し、時間をかけずに上位承認へ回します。</li>
+            <li><strong>会議秘書・事務局:</strong> 招集通知の自動生成、部門ごとの議事録自動構成、および進捗回答の自動収集により、事務作業負担を最小化します。</li>
+            <li><strong>会議メンバー・タスク担当者（PMTG職員55名）:</strong> 各自のモバイル端末からQRコードをスキャンして迅速に出席登録し、タスクの進捗をいつでも画面から更新できます。</li>
+          </ol>
+        </div>
+
+        <div class="report-section" style="page-break-before: always; break-before: page;">
+          <h2>7. プロジェクト実施方法と技術仕様</h2>
+          <p>
+            本システムは、継続的なフィードバックとテストサイクルを備えたアジャイル開発手法に基づいて実施されました：
+          </p>
+          
+          <svg width="600" height="120" viewBox="0 0 600 120" style="display: block; margin: 20px auto; max-width: 100%;">
+            <line x1="120" y1="60" x2="160" y2="60" stroke="#3b82f6" stroke-width="3" />
+            <line x1="280" y1="60" x2="320" y2="60" stroke="#3b82f6" stroke-width="3" />
+            <line x1="440" y1="60" x2="480" y2="60" stroke="#3b82f6" stroke-width="3" />
+            <rect x="10" y="30" width="110" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+            <text x="65" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">1. 課題調査と</text>
+            <text x="65" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">要件定義</text>
+            <rect x="160" y="30" width="120" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+            <text x="220" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">2. コーディング</text>
+            <text x="220" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">＆ データベース構築</text>
+            <rect x="320" y="30" width="120" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+            <text x="380" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">3. 接続テスト</text>
+            <text x="380" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">IP ＆ トンネリング</text>
+            <rect x="480" y="30" width="110" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" />
+            <text x="535" y="55" font-family="Outfit, Arial" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">4. 本格運用開始</text>
+            <text x="535" y="72" font-family="Outfit, Arial" font-size="9" fill="#475569" text-anchor="middle">＆ 研修の実施</text>
+          </svg>
+
+          <h3>システム設計概要:</h3>
+          <p>
+            本ポータルは、軽量で安定したクライアントサーバー型Webアプリケーションとして設計されています：
+          </p>
+          <ul>
+            <li><strong>フロントエンド:</strong> HTML5, CSS3, JavaScript (ES6+), Lucide Icons, およびグラフ描画のための Chart.js を採用。レスポンシブ表示と印刷時のレイアウト最適化を同時にサポート。</li>
+            <li><strong>バックエンド:</strong> Node.js 上で動作する Express HTTP フレームワークを採用し、ルーティング制御とデータ読み書き処理を担当。</li>
+            <li><strong>データベース:</strong> 軽量で移行の容易なフラットファイル形式の JSON データベース（`db.json`）を採用。</li>
+          </ul>
+        </div>
+
+        <div class="report-section">
+          <h2>8. イノベーションの影響分析とコスト削減の調査</h2>
+          <p>
+            SmartGovMeeting PMTGの導入前後における実証的成果の比較は以下の通りです：
+          </p>
+          <table class="kpi-table">
+            <thead>
+              <tr>
+                <th>評価項目</th>
+                <th>従来のアナログ運用（導入前）</th>
+                <th>本ポータルの運用（導入後）</th>
+                <th>改善率と影響効果</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>招集通知メモ作成時間</strong></td><td>120分（ひな型変更、印刷、配布）</td><td>2分（自動生成およびQR配付）</td><td>所要時間を 98.3% 削減</td></tr>
+              <tr><td><strong>議事録承認プロセス期間</strong></td><td>7〜14日間（連続的な対面持ち回り確認）</td><td>24時間以内（電子署名による承認）</td><td>承認時間を 85% 以上短縮</td></tr>
+              <tr><td><strong>出席登録手続き（QR）</strong></td><td>紙の用紙を持ち回り（5〜10分）</td><td>各自の端末でQRスキャン（3秒以内）</td><td>会議の即時開始に寄与</td></tr>
+              <tr><td><strong>年間印刷・消耗品費</strong></td><td>RM 2,400（用紙、インクカートリッジ）</td><td>RM 120（PDFによるデジタル保存）</td><td>経費を 95% 削減</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="report-section">
+          <h2>9. 結論と今後の開発提案</h2>
+          <p>
+            結論として、**SmartGovMeeting PMTG** はポリテクニック・メトロ・タセク・ゲルゴールにおける委員会運営を効率化したデジタルイノベーション事例です。手作業による複雑な事務手続きを削減し、コストパフォーマンスに優れ、モバイル接続による手続きの課題も完全に解消しました。
+          </p>
+          
+          <div class="document-signatures" style="margin-top: 50px; display: flex; justify-content: space-between; font-size: 10pt;">
+            <div style="text-align: center; width: 45%;">
+              <p class="no-indent">作成者:</p>
+              <div style="margin-top: 35px; border-top: 1px solid black; padding-top: 5px;">
+                <strong>モハd・アズルールニザム・ビン・モハd・カマルディン</strong><br>
+                システム開発者,<br>
+                ポリテクニック・メトロ・タセク・ゲルゴール
+              </div>
+            </div>
+            <div style="text-align: center; width: 45%;">
+              <p class="no-indent">承認者:</p>
+              <div style="margin-top: 35px; border-top: 1px solid black; padding-top: 5px;">
+                <strong>(モハd・ユサイニ・ビン・モハメド・アリ)</strong><br>
+                所長,<br>
+                ポリテクニック・メトロ・タセク・ゲルゴール
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer (Japanese) -->
+      <div class="document-footer" style="margin-top: 40px; border-top: 1px solid #cbd5e1; padding-top: 10px; display: flex; justify-content: space-between; font-size: 9pt; color: #64748b;">
+        <span>SmartGovMeeting PMTG &copy; 2026</span>
+        <span>PMTG ICTイノベーション部門</span>
+        <span>書類日付: 2026年8月4日</span>
+      </div>
+    </div>
+
   </div>
 
   <!-- Language selection and Routing script -->
@@ -768,17 +976,23 @@
     const langSelect = document.getElementById('langSelect');
     const contentMs = document.getElementById('content-ms');
     const contentEn = document.getElementById('content-en');
+    const contentJa = document.getElementById('content-ja');
     
     if (langSelect) {
       langSelect.addEventListener('change', (e) => {
         const lang = e.target.value;
+        contentMs.style.display = 'none';
+        contentEn.style.display = 'none';
+        contentJa.style.display = 'none';
+        
         if (lang === 'en') {
-          contentMs.style.display = 'none';
           contentEn.style.display = 'block';
           document.title = "Innovation Proposal Paper - SmartGovMeeting PMTG";
+        } else if (lang === 'ja') {
+          contentJa.style.display = 'block';
+          document.title = "イノベーション提案書 - SmartGovMeeting PMTG";
         } else {
           contentMs.style.display = 'block';
-          contentEn.style.display = 'none';
           document.title = "Kertas Kerja Inovasi - SmartGovMeeting PMTG";
         }
       });
