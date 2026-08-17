@@ -3,7 +3,6 @@
 // ==========================================================================
 
 // Global Application State Cache
-// Global Application State Cache
 window.smartGovState = {
   members: [],
   meetings: [],
@@ -12,6 +11,7 @@ window.smartGovState = {
   auditLogs: [],
   currentOperator: 'Pn. Mashitah binti Osman',
   theme: 'light',
+  lang: localStorage.getItem('smartgov-lang') || 'ms',
   isDemoMode: false
 };
 
@@ -771,12 +771,14 @@ function renderUnitChart(data) {
   const labels = Object.keys(data);
   const values = Object.values(data);
   
+  const isEn = window.smartGovState.lang === 'en';
+  
   unitChartInstance = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: labels,
       datasets: [{
-        label: 'Bilangan Tindakan',
+        label: isEn ? 'Number of Actions' : 'Bilangan Tindakan',
         data: values,
         backgroundColor: 'rgba(59, 130, 246, 0.7)',
         borderColor: 'rgba(59, 130, 246, 1)',
@@ -808,10 +810,14 @@ function renderStatusChart(done, pending, overdue) {
     statusChartInstance.destroy();
   }
   
+  const isEn = window.smartGovState.lang === 'en';
+  
   statusChartInstance = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['Selesai', 'Dalam Tindakan', 'Tamat Tempoh'],
+      labels: isEn 
+        ? ['Completed', 'In Progress', 'Overdue'] 
+        : ['Selesai', 'Dalam Tindakan', 'Tamat Tempoh'],
       datasets: [{
         data: [done, pending, overdue],
         backgroundColor: [
@@ -3595,6 +3601,288 @@ const ROUTES = {
   'audit': AuditModule.init
 };
 
+// ==========================================================================
+// TRANSLATION ENGINE (Bilingual BM/EN support for main dashboard/app)
+// ==========================================================================
+const TRANSLATIONS = {
+  // Sidebar & Navigation
+  "Utama & Analisis": "Main & Analytics",
+  "Dashboard KPI": "KPI Dashboard",
+  "Pra-Mesyuarat": "Pre-Meeting",
+  "Mesyuarat & Agenda": "Meetings & Agendas",
+  "Memo Automatik": "Automatic Memo",
+  "Pengurusan Ahli": "Members Management",
+  "Semasa Mesyuarat": "During Meeting",
+  "Kehadiran (QR)": "Attendance (QR)",
+  "Penulisan Minit": "Minutes Drafting",
+  "Pasca-Mesyuarat": "Post-Meeting",
+  "Kelulusan & Lock": "Approvals & Lock",
+  "Cabutan Minit": "Minutes Extract",
+  "Repositori Fail": "File Repository",
+  "Pemantauan & Tetapan": "Monitoring & Settings",
+  "Tindakan & Reminder": "Actions & Reminders",
+  "Carian Pintar": "Smart Search",
+  "Laporan Lanjut": "Advanced Reports",
+  "Audit Trail": "Audit Trail",
+  "Manual Penggunaan": "User Manual",
+  "Laporan Inovasi": "Innovation Report",
+  "Abstrak Sistem": "System Abstract",
+  
+  // Operator Mode Widget
+  "Mod Operasi": "Operation Mode",
+  "Pn. Mashitah (Pencatat)": "Mrs. Mashitah (Scribe)",
+  "En. Yusaini (Pengerusi)": "Mr. Yusaini (Chairman)",
+  "Pn. Norhasaliza (Penyemak)": "Mrs. Norhasaliza (Reviewer)",
+  "En. Azrulnizam (ICT)": "Mr. Azrulnizam (ICT)",
+  "Setiausaha/Pencatat": "Secretary / Scribe",
+  "Pengarah/Pengerusi": "Director / Chairman",
+  "KJ Sokongan Akademik/Penyemak": "HoD Academic Support / Reviewer",
+  "Ketua Unit ICT": "Head of ICT Unit",
+
+  // Top Header Search & Button
+  "Mesyuarat Baru": "New Meeting",
+
+  // Dashboard Metrics & Titles
+  "Analisis Prestasi Unit & Pegawai": "Unit & Officer Performance Analysis",
+  "Ringkasan KPI Tindakan Jawatankuasa": "Committee Action KPI Summary",
+  "Tindakan Pegawai Tertinggi (Top 5)": "Top 5 Officer Actions",
+  "Senarai Tindakan Terkini": "Latest Actions List",
+  "Senarai Ahli Jawatankuasa": "Committee Members List",
+  "Jumlah Tindakan": "Total Actions",
+  "Kadar Kelulusan Minit": "Minutes Approval Rate",
+  "Kehadiran Purata": "Average Attendance",
+  "Mesyuarat Dijadualkan": "Scheduled Meetings",
+  "Tiada mesyuarat berjadual.": "No scheduled meetings.",
+  "Urus Mesyuarat": "Manage Meetings",
+  "Pegawai": "Officer",
+  "Jumlah": "Total",
+  "Selesai": "Completed",
+  "Dalam Tindakan": "In Progress",
+  "Tamat Tempoh": "Overdue",
+  
+  // Meetings Module
+  "Daftar Mesyuarat Baru": "Register New Meeting",
+  "Nama Mesyuarat": "Meeting Name",
+  "Bilangan": "Number",
+  "Tahun": "Year",
+  "Tarikh": "Date",
+  "Masa": "Time",
+  "Tempat": "Venue",
+  "Pengerusi": "Chairman",
+  "Setiausaha": "Secretary",
+  "Urusetia / Pencatat": "Secretariat / Scribe",
+  "Ahli Mesyuarat Terlibat": "Involved Committee Members",
+  "Agenda Mesyuarat (Susunan Pekeliling)": "Meeting Agenda (Circular Format)",
+  "Tajuk Agenda": "Agenda Title",
+  "Perkara/Sub-Agenda": "Items/Sub-Agenda",
+  "Tindakan / Pegawai": "Action / Officer",
+  "Tambah Agenda": "Add Agenda",
+  "Simpan Rekod Mesyuarat": "Save Meeting Record",
+  "Senarai Mesyuarat Jawatankuasa": "Committee Meetings List",
+  "Bil. Mesyuarat": "Meeting No.",
+  "Status": "Status",
+  "Tindakan": "Action",
+  "Tiada rekod mesyuarat ditemui.": "No meeting records found.",
+  "Kembali ke Senarai": "Back to List",
+
+  // Memo Module
+  "Penjanaan Memo Jemputan Rasmi": "Official Invitation Memo Generation",
+  "Pilih Rekod Mesyuarat": "Select Meeting Record",
+  "Rujukan Fail": "File Reference",
+  "Tarikh Memo": "Memo Date",
+  "Jana Memo Jemputan": "Generate Invitation Memo",
+  "SURAT JEMPUTAN MESYUARAT": "MEETING INVITATION LETTER",
+  "Sila pilih rekod mesyuarat untuk menjana memo.": "Please select a meeting record to generate memo.",
+  "KEHADIRAN & KOD QR": "ATTENDANCE & QR CODE",
+  "Imbas Kod QR di bawah menggunakan telefon pintar anda untuk pendaftaran kehadiran mesyuarat.": "Scan the QR code below using your smartphone to register meeting attendance.",
+  "Disediakan Oleh:": "Prepared By:",
+  "Tandatangan Digital": "Digital Signature",
+  "Cetak Memo PDF": "Print PDF Memo",
+  
+  // Members Module
+  "Pendaftaran Ahli Jawatankuasa": "Committee Members Registration",
+  "Nama Penuh": "Full Name",
+  "Jawatan Rasmi": "Official Position",
+  "Unit / Jabatan": "Unit / Department",
+  "Alamat E-mel": "Email Address",
+  "No. Telefon": "Phone Number",
+  "Kategori Ahli": "Member Category",
+  "Peranan Mesyuarat": "Meeting Role",
+  "Daftar Ahli Baru": "Register New Member",
+  "Import Ahli Secara Kelompok (Excel/CSV)": "Batch Import Members (Excel/CSV)",
+  "Pilih fail Excel (.xlsx) atau CSV (.csv)": "Select Excel (.xlsx) or CSV (.csv) file",
+  "Muat naik & Import": "Upload & Import",
+  "Nama": "Name",
+  "Jawatan": "Position",
+  "Unit": "Unit",
+  "E-mel": "Email",
+  "Telefon": "Phone",
+  "Kategori": "Category",
+  "Peranan": "Role",
+  "Hapus": "Delete",
+
+  // Attendance Module
+  "Sistem Pendaftaran Kehadiran Pintar": "Smart Attendance Registration System",
+  "Kod QR Kehadiran Mesyuarat": "Meeting Attendance QR Code",
+  "Kehadiran Ahli": "Members Attendance",
+  "Hadir": "Present",
+  "Tidak Hadir": "Absent",
+  "Cuti": "On Leave",
+  "Hantar Kehadiran": "Submit Attendance",
+  "Lokal (Wi-Fi Pejabat)": "Local (Office Wi-Fi)",
+  "Awan (Tunneling Aktif)": "Cloud (Active Tunneling)",
+  "Imbasan QR Kehadiran": "Attendance QR Scan",
+  
+  // Minutes Module
+  "Penulisan & Pembahagian Minit Jawatankuasa": "Committee Minutes Writing & Division",
+  "Pilih Mesyuarat": "Select Meeting",
+  "Kehadiran Ahli (Sila Semak)": "Members Attendance (Please Review)",
+  "Butiran Rekod Minit Mengikut Agenda": "Minutes Record Details by Agenda",
+  "Catatan Minit": "Minutes Notes",
+  "Tindakan Susulan Pegawai": "Officers Follow-up Actions",
+  "Pegawai Bertanggungjawab": "Responsible Officer",
+  "Tarikh Sasaran Siap": "Target Completion Date",
+  "Simpan Draf Minit": "Save Draft Minutes",
+  "Kunci & Hantar untuk Semakan": "Lock & Send for Review",
+
+  // Approval Module
+  "Kitaran Aliran Kelulusan Minit Mesyuarat": "Meeting Minutes Approval Workflow",
+  "Draf": "Draft",
+  "Sedia Disemak": "Ready to Review",
+  "Telah Disemak": "Reviewed",
+  "Telah Diluluskan": "Approved",
+  "Semak Minit": "Review Minutes",
+  "Luluskan Minit": "Approve Minutes",
+  "Penyemak Minit": "Minutes Reviewer",
+  "Pengerusi Mesyuarat": "Meeting Chairman",
+  "Tandatangan Digital Penyemak": "Reviewer's Digital Signature",
+  "Tandatangan Digital Pengerusi": "Chairman's Digital Signature",
+
+  // Extract Module
+  "Maklum Balas Cabutan Minit Mesyuarat": "Meeting Minutes Extract Feedback",
+  "Cari Nama Pegawai": "Search Officer Name",
+  "Tindakan Dipertanggungjawabkan": "Assigned Actions",
+  "Tarikh Akhir": "Deadline",
+  "Status Tindakan": "Action Status",
+  "Belum Mula": "Not Started",
+  "Catatan Maklum Balas": "Feedback Notes",
+  "Kemaskini Status": "Update Status",
+  "Cetak Cabutan PDF": "Print Extract PDF",
+
+  // Repository Module
+  "Repositori Dokumen Mesyuarat": "Meeting Document Repository",
+  "Nama Fail": "File Name",
+  "Saiz": "Size",
+  "Tarikh Muat Naik": "Upload Date",
+  "Muat Naik Fail Baru": "Upload New File",
+  "Muat Turun": "Download",
+
+  // Monitoring Module
+  "Pemantauan & Peringatan Tindakan Pegawai": "Monitoring & Officer Action Reminders",
+  "Penunjuk Prestasi Utama (KPI)": "Key Performance Indicators (KPI)",
+  "Kadar Penyelesaian": "Completion Rate",
+  "Tindakan Selesai": "Completed Actions",
+  "Tindakan Tertunggak": "Overdue Actions",
+  "Hantar Peringatan E-mel/WhatsApp": "Send Email/WhatsApp Reminder",
+  "Peringatan Dihantar": "Reminder Sent",
+
+  // Search Module
+  "Enjin Carian Pintar Mesyuarat": "Smart Meeting Search Engine",
+  "Kata Kunci Carian": "Search Keywords",
+  "Hasil Carian": "Search Results",
+  "Masukkan kata kunci carian...": "Enter search keywords...",
+
+  // Reports Module
+  "Laporan Lanjut & Analitik KPI": "Advanced Reports & KPI Analytics",
+  "Pilih Jenis Laporan": "Select Report Type",
+  "Laporan Prestasi Pegawai": "Officer Performance Report",
+  "Laporan Prestasi Unit": "Unit Performance Report",
+  "Laporan Kehadiran Tahunan": "Annual Attendance Report",
+  "Jana Laporan": "Generate Report",
+  "Eksport ke Excel": "Export to Excel",
+
+  // Audit Module
+  "Log Audit Trail Keselamatan Sistem": "System Security Audit Trail Log",
+  "Tarikh & Masa": "Date & Time",
+  "Operator": "Operator",
+  "Alamat IP": "IP Address",
+  "Aktiviti": "Activity",
+  "Butiran": "Details",
+
+  // General Text
+  "Bil.": "No.",
+  "Kembali": "Back",
+  "Ralat Paparan": "Display Error"
+};
+
+window.translateDOM = function() {
+  if (window.smartGovState.lang !== 'en') return;
+
+  function translateNode(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      let txt = node.nodeValue.trim();
+      let key = txt;
+      let hasColon = false;
+      if (txt.endsWith(':')) {
+        key = txt.slice(0, -1).trim();
+        hasColon = true;
+      }
+      
+      if (TRANSLATIONS[key]) {
+        let replacement = TRANSLATIONS[key] + (hasColon ? ':' : '');
+        node.nodeValue = node.nodeValue.replace(txt, replacement);
+      }
+    }
+    
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      // Placeholder attribute
+      if (node.hasAttribute('placeholder')) {
+        let ph = node.getAttribute('placeholder').trim();
+        if (TRANSLATIONS[ph]) {
+          node.setAttribute('placeholder', TRANSLATIONS[ph]);
+        }
+      }
+      // Title attribute
+      if (node.hasAttribute('title')) {
+        let title = node.getAttribute('title').trim();
+        if (TRANSLATIONS[title]) {
+          node.setAttribute('title', TRANSLATIONS[title]);
+        }
+      }
+      // Option values
+      if (node.tagName === 'OPTION') {
+        let optText = node.textContent.trim();
+        if (TRANSLATIONS[optText]) {
+          node.textContent = TRANSLATIONS[optText];
+        }
+      }
+      // Button inputs
+      if (node.tagName === 'INPUT' && (node.type === 'button' || node.type === 'submit')) {
+        let val = node.value.trim();
+        if (TRANSLATIONS[val]) {
+          node.value = TRANSLATIONS[val];
+        }
+      }
+    }
+    
+    for (let child of node.childNodes) {
+      translateNode(child);
+    }
+  }
+
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar) translateNode(sidebar);
+
+  const mainWorkspace = document.getElementById('viewContainer');
+  if (mainWorkspace) translateNode(mainWorkspace);
+
+  // Top header search box input
+  const globalSearch = document.getElementById('globalHeaderSearch');
+  if (globalSearch) {
+    globalSearch.setAttribute('placeholder', 'Search meetings, officers or actions...');
+  }
+};
+
 async function handleRouting() {
   const viewContainer = document.getElementById('viewContainer');
   if (!viewContainer) return;
@@ -3644,10 +3932,21 @@ async function handleRouting() {
   }
 
   if (window.lucide) window.lucide.createIcons();
+  if (window.translateDOM) window.translateDOM();
 }
 
 // Global System Event Initializer
 document.addEventListener('DOMContentLoaded', async () => {
+  const appLangSelect = document.getElementById('appLangSelect');
+  if (appLangSelect) {
+    appLangSelect.value = window.smartGovState.lang || 'ms';
+    appLangSelect.addEventListener('change', () => {
+      window.smartGovState.lang = appLangSelect.value;
+      localStorage.setItem('smartgov-lang', appLangSelect.value);
+      handleRouting();
+    });
+  }
+
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   const savedTheme = localStorage.getItem('smartgov-theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
